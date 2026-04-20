@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { 
   ArrowUpRight, 
@@ -20,15 +20,21 @@ import {
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const ServiceCard = ({ number, title, subtitle, description, points, price, footer }: any) => (
-  <div className="rounded-[2.5rem] p-8 lg:p-12 flex flex-col h-full transition-all duration-300 hover:scale-[1.02] bg-white border border-gray-100 text-gray-900 shadow-sm hover:bg-blue-50/50 hover:border-blue-200">
+const ServiceCard = ({ number, title, subtitle, description, points, price, footer, id, slug }: any) => (
+  <Link 
+    to={`/services/${slug}`}
+    id={id} 
+    className="group rounded-[2.5rem] p-8 lg:p-12 flex flex-col h-full transition-all duration-500 hover:scale-[1.01] bg-white border border-gray-100 text-gray-900 shadow-sm hover:shadow-2xl hover:shadow-blue-600/5 hover:border-blue-200 scroll-mt-24 cursor-pointer overflow-hidden relative"
+  >
+    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-blue-600/10 transition-colors"></div>
+    
     <div className="flex justify-between items-start mb-12">
-      <span className="text-6xl font-black font-jakarta tracking-tighter opacity-10 text-gray-900">{number}</span>
-      <div className="px-4 py-1 rounded-full text-badge bg-blue-50 text-blue-600">
+      <span className="text-6xl font-black font-jakarta tracking-tighter opacity-10 text-gray-900 group-hover:opacity-20 transition-opacity">{number}</span>
+      <div className="px-4 py-1 rounded-full text-badge bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
         {subtitle}
       </div>
     </div>
-    <h3 className="text-gray-900 mb-6">{title}</h3>
+    <h3 className="text-gray-900 mb-6 group-hover:text-blue-600 transition-colors">{title}</h3>
     <p className="text-body text-gray-500 mb-10">{description}</p>
     
     <div className="space-y-4 mb-12 flex-1">
@@ -46,18 +52,34 @@ const ServiceCard = ({ number, title, subtitle, description, points, price, foot
           <p className="text-badge text-gray-400 mb-2">{footer}</p>
           <p className="text-3xl font-bold font-jakarta tracking-tighter">{price}</p>
         </div>
-        <button className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-gray-900 text-white hover:bg-black btn-sm">
+        <div className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-gray-900 text-white group-hover:bg-blue-600 group-hover:scale-110">
           <ArrowUpRight className="w-6 h-6" />
-        </button>
+        </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Services = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const offers = [
     {
       number: "01",
+      id: "service-1",
+      slug: "formation-ia",
       title: "Formation IA",
       subtitle: "Acculturation & Montée en compétences",
       description: "Comprendre et maîtriser l'IA générative pour l'utiliser à son plein potentiel. Nous formons vos collaborateurs avec des cas d'usage tirés de leur quotidien professionnel.",
@@ -73,6 +95,8 @@ const Services = () => {
     },
     {
       number: "02",
+      id: "service-2",
+      slug: "audit-ia",
       title: "Audit IA",
       subtitle: "Diagnostic & Plan d'actions",
       description: "Nous identifions les cas d'usage IA qui auront un impact réel : temps gagné, coûts réduits, productivité augmentée. Vous repartez avec un plan d'actions clair.",
@@ -88,6 +112,8 @@ const Services = () => {
     },
     {
       number: "03",
+      id: "service-3",
+      slug: "prestations-sur-mesure",
       title: "Prestations sur-mesure",
       subtitle: "Développement & Intégration",
       description: "Les solutions du marché ne sont pas adaptées à vos spécificités ? Nous développons des agents IA et des outils sur mesure pour vos cas d'usage métier.",
@@ -103,6 +129,8 @@ const Services = () => {
     },
     {
       number: "04",
+      id: "service-4",
+      slug: "coaching-dirigeant",
       title: "Coaching Dirigeant",
       subtitle: "Vision Stratégique & Décision",
       description: "Un accompagnement 1-to-1 pour transformer l'IA en levier de croissance. Développez une vision à 360° des impacts de l'IA générative sur votre organisation.",

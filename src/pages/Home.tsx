@@ -167,10 +167,10 @@ const Constat = () => {
 
 const OffersOverview = () => {
   const offers = [
-    { title: "Formation IA", desc: "Rendez vos équipes autonomes sur l'IA générative.", price: "3 500€", tag: "Qualiopi" },
-    { title: "Audit IA", desc: "Identifiez les cas d'usage les plus impactants.", price: "Dès 6 000€", tag: "Bpifrance" },
-    { title: "Développement", desc: "Solutions et agents IA sur-mesure.", price: "Sur devis", tag: "Custom" },
-    { title: "Coaching", desc: "Accompagnement stratégique pour décideurs.", price: "5 000€", tag: "1-to-1" }
+    { title: "Formation IA", slug: "formation-ia", desc: "Rendez vos équipes autonomes sur l'IA générative.", price: "3 500€", tag: "Qualiopi" },
+    { title: "Audit IA", slug: "audit-ia", desc: "Identifiez les cas d'usage les plus impactants.", price: "Dès 6 000€", tag: "Bpifrance" },
+    { title: "Développement", slug: "prestations-sur-mesure", desc: "Solutions et agents IA sur-mesure.", price: "Sur devis", tag: "Custom" },
+    { title: "Coaching", slug: "coaching-dirigeant", desc: "Accompagnement stratégique pour décideurs.", price: "5 000€", tag: "1-to-1" }
   ];
 
   return (
@@ -187,19 +187,23 @@ const OffersOverview = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         {offers.map((offer, i) => (
-          <div key={i} className="bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-blue-600/10 hover:border-blue-500/30 hover:scale-[1.02] transition-all duration-300 group">
+          <Link 
+            key={i} 
+            to={`/services/${offer.slug}`}
+            className="bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-blue-600/10 hover:border-blue-500/30 hover:scale-[1.02] transition-all duration-300 group cursor-pointer"
+          >
             <div className="flex justify-between items-start mb-8">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-500 font-jakarta font-bold text-sm">
                 {String(i + 1).padStart(2, '0')}
               </div>
             </div>
-            <h4 className="text-white mb-3">{offer.title}</h4>
+            <h4 className="text-white mb-3 group-hover:text-blue-400 transition-colors">{offer.title}</h4>
             <p className="text-body-sm text-gray-400 mb-8">{offer.desc}</p>
             <div className="flex items-center justify-between pt-6 border-t border-white/10">
               <span className="text-lg font-bold font-jakarta tracking-tighter">{offer.price}</span>
               <ArrowUpRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors" />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
