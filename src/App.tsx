@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Event from "./pages/Event";
 import ServiceDetail from "./pages/ServiceDetail";
+import Confirmation from "./pages/Confirmation";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/evenement" element={<Event />} />
+          <Route path="/certure/evenement/confirmation" element={<Confirmation />} />
         </Routes>
       </div>
     </Router>

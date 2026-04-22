@@ -215,7 +215,7 @@ const Services = () => {
               Réserver un diagnostic
             </a>
             <Link to="/evenement" className="bg-blue-700 text-white px-8 py-4 rounded-full btn-lg hover:bg-blue-800 transition-all border border-blue-500">
-              S'inscrire à l'événement IA
+              S'inscrire à l'evènement IA
             </Link>
           </div>
         </div>

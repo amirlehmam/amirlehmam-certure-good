@@ -659,7 +659,7 @@ const EventCallout = () => {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-6">
               <Zap className="w-3 h-3" />
-              Événement exclusif
+              Evènement exclusif
             </div>
             <h2 className="text-white mb-6">Dirigeants : et si votre entreprise était déjà <span className="text-blue-500 italic">en retard sur l’IA ?</span></h2>
             <p className="text-gray-400 text-lg mb-8">

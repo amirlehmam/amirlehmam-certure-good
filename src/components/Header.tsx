@@ -11,7 +11,7 @@ const Header = ({ variant = "dark" }: HeaderProps) => {
   const navItems = [
     { name: "Accueil", path: "/" },
     { name: "Nos Services", path: "/services" },
-    { name: "Événement", path: "/evenement" },
+    { name: "Evènement", path: "/evenement" },
   ];
 
   const textColor = variant === "light" ? "text-white" : "text-gray-900";
@@ -20,8 +20,13 @@ const Header = ({ variant = "dark" }: HeaderProps) => {
 
   return (
     <nav className="sticky top-0 z-[100] flex w-full items-center justify-between py-4 md:py-6 px-4 md:px-8">
-      <Link to="/" className={`text-2xl md:text-3xl font-black uppercase tracking-tighter font-jakarta leading-none ${textColor}`} style={{ letterSpacing: "-0.04em" }}>
-        CERTURE.
+      <Link to="/" className="flex items-center">
+        <img 
+          src="https://i.ibb.co/d43XW9XB/Certure-logo-1200x600-1-removebg-preview.png" 
+          alt="Certure Logo" 
+          className="h-10 md:h-14 w-auto object-contain"
+          referrerPolicy="no-referrer"
+        />
       </Link>
       <div className="hidden md:flex items-center gap-10">
         {navItems.map((item) => (

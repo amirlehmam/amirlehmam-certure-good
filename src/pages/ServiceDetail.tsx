@@ -262,7 +262,7 @@ const ServiceDetail = () => {
                 to="/evenement"
                 className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-full font-black transition-all"
               >
-                Voir le prochain événement
+                Voir le prochain evènement
                 <Calendar className="w-4 h-4" />
               </Link>
               <button 

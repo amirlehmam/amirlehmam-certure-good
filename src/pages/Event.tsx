@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 import { 
   Calendar, 
   MapPin, 
@@ -33,188 +34,139 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const BrevoForm = () => {
-  useEffect(() => {
-    const win = window as any;
-    win.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
-    win.LOCALE = 'fr';
-    win.EMAIL_INVALID_MESSAGE = win.SMS_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
-    win.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ. ";
-    win.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
-    win.translation = {
-      common: {
-        selectedList: '{quantity} liste sélectionnée',
-        selectedLists: '{quantity} listes sélectionnées',
-        selectedOption: '{quantity} sélectionné',
-        selectedOptions: '{quantity} sélectionnés',
-      }
-    };
-    win.AUTOHIDE = false;
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-    const script = document.createElement('script');
-    script.src = "https://sibforms.com/forms/end-form/build/main.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+  const handleSubmit = async () => {
+    setLoading(true);
+    setError(null);
 
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+    // Manual validation since we're using a div
+    const firstName = (document.getElementById('field-firstname') as HTMLInputElement)?.value;
+    const lastName = (document.getElementById('field-lastname') as HTMLInputElement)?.value;
+    const email = (document.getElementById('field-email') as HTMLInputElement)?.value;
+
+    if (!firstName || !lastName || !email) {
+      setError("Veuillez remplir tous les champs obligatoires.");
+      setLoading(false);
+      return;
+    }
+
+    const data: Record<string, string> = {
+      FIRSTNAME: firstName,
+      LASTNAME: lastName,
+      EMAIL: email,
+      locale: 'fr',
+      email_address_check: ''
     };
-  }, []);
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      if (response.ok) {
+        navigate("/certure/evenement/confirmation");
+      } else {
+        throw new Error("Erreur lors de l'inscription");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Une erreur est survenue. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div className="w-full max-w-2xl mx-auto my-12">
-      <style dangerouslySetInnerHTML={{ __html: `
-        @font-face {
-          font-display: block;
-          font-family: Roboto;
-          src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-        }
-        @font-face {
-          font-display: fallback;
-          font-family: Roboto;
-          font-weight: 600;
-          src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-        }
-        @font-face {
-          font-display: fallback;
-          font-family: Roboto;
-          font-weight: 700;
-          src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-        }
-        #sib-container input:-ms-input-placeholder { text-align: left; font-family: Helvetica, sans-serif; color: #c0ccda; }
-        #sib-container input::placeholder { text-align: left; font-family: Helvetica, sans-serif; color: #c0ccda; }
-        #sib-container textarea::placeholder { text-align: left; font-family: Helvetica, sans-serif; color: #c0ccda; }
-        #sib-container a { text-decoration: underline; color: #2BB2FC; }
-        iframe[src*="sibforms.com"],
-        #sib-container input,
-        .sib-container input,
-        .sib-form-block input,
-        .sib-form input[type="text"],
-        .sib-form input[type="email"],
-        .sib-form input[type="tel"],
-        .sib-form textarea {
-          color: #1a1a1a !important;
-          -webkit-text-fill-color: #1a1a1a !important;
-        }
-      `}} />
-      <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
+    <div className="w-full max-w-2xl mx-auto my-12 bg-white rounded-3xl p-8 md:p-12 shadow-2xl text-gray-900 border border-gray-100">
+      <div className="mb-10 text-center md:text-left">
+        <h3 className="text-3xl font-black mb-4 tracking-tight">Réservez votre place</h3>
+        <div className="space-y-2 text-gray-500 font-bold italic">
+          <p className="flex items-center gap-2 justify-center md:justify-start">
+            <span className="text-blue-600">🕰️</span> Lundi 18 Mai à 18h30
+          </p>
+          <p className="flex items-center gap-2 justify-center md:justify-start">
+            <span className="text-blue-600">📍</span> 21 Avenue de Paris, Versailles (CCI)
+          </p>
+        </div>
+        <p className="mt-6 text-xs text-gray-400 bg-gray-50 p-4 rounded-xl border border-gray-100 italic">
+          *Les places étant limitées, elles sont attribuées en priorité aux dirigeants d'entreprise. L’inscription est soumise à validation.
+        </p>
+      </div>
 
-      <div className="sib-form" style={{ textAlign: 'center', backgroundColor: 'transparent' }}>
-        <div id="sib-form-container" className="sib-form-container">
-          <div id="error-message" className="sib-form-message-panel" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949', maxWidth: '540px', margin: '0 auto', display: 'none' }}>
-            <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" className="sib-icon sib-notification__icon">
-                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-              </svg>
-              <span className="sib-form-message-panel__inner-text">Nous n'avons pas pu confirmer votre inscription.</span>
-            </div>
+      <div id="registration-form-element" className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label className="text-sm font-black uppercase tracking-widest text-gray-400 ml-1">Prénom</label>
+            <input 
+              id="field-firstname"
+              name="FIRSTNAME" 
+              type="text" 
+              required 
+              placeholder="Ex: Jean"
+              className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-blue-600 focus:ring-4 focus:ring-blue-600/5 transition-all outline-none font-bold placeholder:text-gray-300"
+            />
           </div>
-          <div id="success-message" className="sib-form-message-panel" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#085229', backgroundColor: '#e7faf0', borderRadius: '3px', borderColor: '#13ce66', maxWidth: '540px', margin: '0 auto', display: 'none' }}>
-            <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" className="sib-icon sib-notification__icon">
-                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-              </svg>
-              <span className="sib-form-message-panel__inner-text">Votre inscription est confirmée.</span>
-            </div>
-          </div>
-
-          <div id="sib-container" className="sib-container--large sib-container--vertical" style={{ textAlign: 'center', backgroundColor: 'rgba(245,245,245,1)', maxWidth: '540px', borderRadius: '8px', borderWidth: '1px', borderColor: '#105ef7', borderStyle: 'solid', direction: 'ltr', margin: '0 auto' }}>
-            <form id="sib-form" method="POST" action="https://8edb9099.sibforms.com/serve/MUIFANpOGOYwxgMKdNyuJYO6_soF4Dcht7GVa5f8XerygRDKQVDVS-9DUwEMme0EZi1j7izY1XLWaq2dWx0nvQ9pf6QcKIamXDUp9aSSMoO648JGiMPzZyPndsuUZIa9VMXKI6HBWWAaaMX-KE-lH-PQIJA_eHaGjlf0_Mvw0q6zNFggF1fOGrgX7-Wjpyz1aeOym7hL0a_7wf0f" data-type="subscription">
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block" style={{ fontSize: '32px', textAlign: 'left', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#1c1d21', backgroundColor: 'transparent' }}>
-                  <p>Réservez votre place</p>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
-                  <div className="sib-text-form-block">
-                    <p>🕰️ Lundi 18 Mai à 19h&nbsp;</p>
-                    <p>📍 21 Avenue de Paris, 78000 Versailles&nbsp;</p>
-                  </div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block" style={{ fontSize: '12px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
-                  <div className="sib-text-form-block">
-                    <p><em><strong>*Les places étant limitées, elles sont attribuées en priorité aux dirigeants d'entreprise. L’inscription est soumise à validation.</strong></em></p>
-                  </div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-input sib-form-block">
-                  <div className="form__entry entry_block">
-                    <div className="form__label-row ">
-                      <label className="entry__label" style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }} htmlFor="FIRSTNAME" data-required="*">Prénom</label>
-                      <div className="entry__field">
-                        <input className="input " maxLength={200} type="text" id="FIRSTNAME" name="FIRSTNAME" autoComplete="off" placeholder="Prénom" data-required="true" required />
-                      </div>
-                    </div>
-                    <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }}></label>
-                  </div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-input sib-form-block">
-                  <div className="form__entry entry_block">
-                    <div className="form__label-row ">
-                      <label className="entry__label" style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }} htmlFor="LASTNAME" data-required="*">Nom de famille</label>
-                      <div className="entry__field">
-                        <input className="input " maxLength={200} type="text" id="LASTNAME" name="LASTNAME" autoComplete="off" placeholder="Nom de famille" data-required="true" required />
-                      </div>
-                    </div>
-                    <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }}></label>
-                  </div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block sib-divider-form-block">
-                  <div style={{ border: 0, borderBottom: '1px solid #E5EDF6' }}></div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-input sib-form-block">
-                  <div className="form__entry entry_block">
-                    <div className="form__label-row ">
-                      <label className="entry__label" style={{ fontWeight: 700, textAlign: 'left', fontSize: '16px', fontFamily: 'Helvetica, sans-serif', color: '#3c4858' }} htmlFor="EMAIL" data-required="*">Adresse e-mail professionnelle</label>
-                      <div className="entry__field">
-                        <input className="input " type="text" id="EMAIL" name="EMAIL" autoComplete="off" placeholder="Adresse e-mail" data-required="true" required />
-                      </div>
-                    </div>
-                    <label className="entry__error entry__error--primary" style={{ fontSize: '16px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#661d1d', backgroundColor: '#ffeded', borderRadius: '3px', borderColor: '#ff4949' }}></label>
-                  </div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block" style={{ fontSize: '10px', textAlign: 'left', fontFamily: 'Helvetica, sans-serif', color: '#3C4858', backgroundColor: 'transparent' }}>
-                  <div className="sib-text-form-block">
-                    <p><em><strong>Les informations sont collectées pour vérifier les inscriptions à l’entrée et faciliter le networking entre les participants.</strong></em></p>
-                  </div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block sib-divider-form-block">
-                  <div style={{ border: 0, borderBottom: '1px solid #E5EDF6' }}></div>
-                </div>
-              </div>
-              <div style={{ padding: '8px 0' }}>
-                <div className="sib-form-block" style={{ textAlign: 'left' }}>
-                  <button className="sib-form-block__button sib-form-block__button-with-loader" style={{ fontSize: '16px', textAlign: 'left', fontWeight: 700, fontFamily: 'Helvetica, sans-serif', color: '#FFFFFF', backgroundColor: '#105ef7', borderRadius: '8px', borderWidth: '0px' }} form="sib-form" type="submit">
-                    <svg className="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                      <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                    </svg>
-                    Je réserve ma place pour l'évènement
-                  </button>
-                </div>
-              </div>
-
-              <input type="text" name="email_address_check" defaultValue="" className="input--hidden" style={{ display: 'none' }} />
-              <input type="hidden" name="locale" value="fr" />
-              <input type="hidden" name="REDIRECTION_URL" value={window.location.href} />
-            </form>
+          <div className="space-y-2">
+            <label className="text-sm font-black uppercase tracking-widest text-gray-400 ml-1">Nom</label>
+            <input 
+              id="field-lastname"
+              name="LASTNAME" 
+              type="text" 
+              required 
+              placeholder="Ex: Dupont"
+              className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-blue-600 focus:ring-4 focus:ring-blue-600/5 transition-all outline-none font-bold placeholder:text-gray-300"
+            />
           </div>
         </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-black uppercase tracking-widest text-gray-400 ml-1">Adresse e-mail professionnelle</label>
+          <input 
+            id="field-email"
+            name="EMAIL" 
+            type="email" 
+            required 
+            placeholder="jean.dupont@entreprise.fr"
+            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:border-blue-600 focus:ring-4 focus:ring-blue-600/5 transition-all outline-none font-bold placeholder:text-gray-300"
+          />
+        </div>
+
+        {error && (
+          <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm font-bold flex items-center gap-3">
+            <AlertTriangle className="w-5 h-5 shrink-0" />
+            {error}
+          </div>
+        )}
+
+        <button 
+          type="button" 
+          onClick={handleSubmit}
+          disabled={loading}
+          className={`w-full py-6 rounded-2xl bg-blue-600 text-white font-black text-xl md:text-2xl transition-all shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-blue-700 hover:scale-[1.01]'}`}
+        >
+          {loading ? (
+            <div className="flex items-center gap-3">
+              <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+              Inscription...
+            </div>
+          ) : (
+            <>
+              Je réserve ma place gratuite
+              <ArrowRight className="w-6 h-6" />
+            </>
+          )}
+        </button>
+
+        <p className="text-[10px] text-gray-400 text-center font-medium leading-relaxed max-w-sm mx-auto">
+          En validant, vous acceptez que vos informations soient collectées pour valider votre inscription et faciliter le networking.
+        </p>
       </div>
     </div>
   );
@@ -347,7 +299,7 @@ const Event = () => {
               <div className="flex items-center gap-8 pt-4">
                 <div className="flex flex-col">
                   <span className="text-4xl font-black text-blue-600">3</span>
-                  <span className="text-xs text-gray-400 uppercase tracking-widest font-black">Événements organisés</span>
+                  <span className="text-xs text-gray-400 uppercase tracking-widest font-black">Evènements organisés</span>
                 </div>
                 <div className="h-10 w-px bg-gray-200"></div>
                 <div className="flex flex-col">
@@ -485,7 +437,7 @@ const Event = () => {
                     { time: "20h00", title: "Échanges avec les partenaires" },
                     { time: "20h15", title: "Questions réponses" },
                     { time: "20h45", title: "Networking" },
-                    { time: "21h30", title: "Fin de l’événement" }
+                    { time: "21h30", title: "Fin de l’evènement" }
                   ].map((item, i) => (
                     <div key={i} className="relative flex items-center gap-6 group">
                       <div className="absolute left-[4px] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-blue-600 z-10"></div>
@@ -555,7 +507,7 @@ const Event = () => {
               <ArrowRight className="w-6 h-6" />
             </button>
             <div className="mt-8 flex flex-col items-center">
-              <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-4">Ils sont partenaires de l'événement</p>
+              <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-4">Ils sont partenaires de l'evènement</p>
               <div className="flex justify-center items-center gap-6 md:gap-10">
                 <img src="https://i.imgur.com/SFJ8DSP.png" alt="CCI" className="h-6 md:h-7 object-contain" referrerPolicy="no-referrer" />
                 <img src="https://i.imgur.com/tobsWmq.jpeg" alt="Bpifrance" className="h-6 md:h-7 object-contain rounded" referrerPolicy="no-referrer" />
@@ -672,7 +624,7 @@ const Event = () => {
                       <MapPin className="text-white w-5 h-5 md:w-6 md:h-6" />
                     </div>
                     <div className="space-y-1 md:space-y-2">
-                      <p className="text-gray-500 font-bold uppercase tracking-widest text-[9px] md:text-xs">Lieu de l’événement</p>
+                      <p className="text-gray-500 font-bold uppercase tracking-widest text-[9px] md:text-xs">Lieu de l’evènement</p>
                       <p className="text-lg md:text-2xl text-white font-black leading-tight">
                         21 avenue de Paris, <br />78000 Versailles
                       </p>
@@ -761,14 +713,14 @@ const Event = () => {
       <section className="py-16 md:py-32 px-6 relative overflow-hidden bg-white">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter leading-[0.85] text-gray-900 max-w-4xl mx-auto italic uppercase">
-            L'événement IA incontournable à Versailles.
+            L'evènement IA incontournable à Versailles.
           </h2>
           
           <button 
             onClick={scrollToForm}
             className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 md:px-12 md:py-6 rounded-full text-xl md:text-2xl font-black transition-all transform hover:scale-105 shadow-2xl shadow-blue-600/30 flex items-center justify-center gap-3 mx-auto"
           >
-            S'inscrire à l'événement (Gratuit)
+            S'inscrire à l'evènement (Gratuit)
             <ArrowRight className="w-6 h-6 hidden md:block" />
           </button>
           <p className="mt-8 text-blue-600 font-black uppercase tracking-[0.2em] text-sm animate-pulse">Lundi 18 mai, 18h30 à Versailles</p>

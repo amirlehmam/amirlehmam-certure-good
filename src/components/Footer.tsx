@@ -9,7 +9,14 @@ const Footer = () => {
       
       <div className="px-8 md:px-16 pt-16 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
         <div className="lg:col-span-5 space-y-6">
-          <h3 className="text-3xl text-white font-jakarta font-medium tracking-tighter">Certure<span className="text-[#2D5CF3]">.</span></h3>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="https://i.ibb.co/d43XW9XB/Certure-logo-1200x600-1-removebg-preview.png" 
+              alt="Certure Logo" 
+              className="h-12 md:h-16 w-auto object-contain -ml-4"
+              referrerPolicy="no-referrer"
+            />
+          </Link>
           <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-sans">L'IA dans vos outils. Des résultats dès le premier mois.</p>
           <div className="flex gap-4 pt-2">
             <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors text-gray-400 hover:text-white border border-white/5">
@@ -31,7 +38,7 @@ const Footer = () => {
             <h4 className="text-white font-sans">Entreprise</h4>
             <ul className="space-y-3 text-sm text-gray-500">
               <li><a href="#" className="hover:text-[#2D5CF3] transition-colors font-sans">Notre équipe</a></li>
-              <li><Link to="/evenement" className="hover:text-[#2D5CF3] transition-colors font-sans">Événement</Link></li>
+              <li><Link to="/evenement" className="hover:text-[#2D5CF3] transition-colors font-sans">Evènement</Link></li>
               <li><a href="#" className="hover:text-[#2D5CF3] transition-colors font-sans">Contact</a></li>
             </ul>
           </div>
