@@ -167,8 +167,8 @@ const Constat = () => {
 
 const OffersOverview = () => {
   const offers = [
-    { title: "Formation IA", slug: "formation-ia", desc: "Rendez vos équipes autonomes sur l'IA générative.", price: "3 500€", tag: "Qualiopi" },
     { title: "Audit IA", slug: "audit-ia", desc: "Identifiez les cas d'usage les plus impactants.", price: "Dès 6 000€", tag: "Bpifrance" },
+    { title: "Formation IA", slug: "formation-ia", desc: "Rendez vos équipes autonomes sur l'IA générative.", price: "3 500€", tag: "Qualiopi" },
     { title: "Développement", slug: "prestations-sur-mesure", desc: "Solutions et agents IA sur-mesure.", price: "Sur devis", tag: "Custom" },
     { title: "Coaching", slug: "coaching-dirigeant", desc: "Accompagnement stratégique pour décideurs.", price: "5 000€", tag: "1-to-1" }
   ];

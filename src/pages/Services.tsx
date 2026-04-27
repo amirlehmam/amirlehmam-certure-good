@@ -78,23 +78,6 @@ const Services = () => {
   const offers = [
     {
       number: "01",
-      id: "service-1",
-      slug: "formation-ia",
-      title: "Formation IA",
-      subtitle: "Acculturation & Montée en compétences",
-      description: "Comprendre et maîtriser l'IA générative pour l'utiliser à son plein potentiel. Nous formons vos collaborateurs avec des cas d'usage tirés de leur quotidien professionnel.",
-      points: [
-        "Prompt Engineering avancé",
-        "Ateliers pratiques par métier",
-        "Automatisation & agents IA",
-        "Certification Certure"
-      ],
-      price: "3 500 EUR",
-      footer: "Par session / Éligible OPCO 100%",
-      dark: false
-    },
-    {
-      number: "02",
       id: "service-2",
       slug: "audit-ia",
       title: "Audit IA",
@@ -109,6 +92,23 @@ const Services = () => {
       price: "Dès 6 000 EUR",
       footer: "Financement Bpifrance possible (42%)",
       dark: true
+    },
+    {
+      number: "02",
+      id: "service-1",
+      slug: "formation-ia",
+      title: "Formation IA",
+      subtitle: "Acculturation & Montée en compétences",
+      description: "Comprendre et maîtriser l'IA générative pour l'utiliser à son plein potentiel. Nous formons vos collaborateurs avec des cas d'usage tirés de leur quotidien professionnel.",
+      points: [
+        "Prompt Engineering avancé",
+        "Ateliers pratiques par métier",
+        "Automatisation & agents IA",
+        "Certification Certure"
+      ],
+      price: "3 500 EUR",
+      footer: "Par session / Éligible OPCO 100%",
+      dark: false
     },
     {
       number: "03",
