@@ -89,19 +89,23 @@ const BrevoForm = () => {
         #sib-container input:-ms-input-placeholder {
           text-align: left;
           font-family: Helvetica, sans-serif;
-          color: #080808;
+          color: #999999;
         }
 
         #sib-container input::placeholder {
           text-align: left;
           font-family: Helvetica, sans-serif;
-          color: #080808;
+          color: #999999;
         }
 
         #sib-container textarea::placeholder {
           text-align: left;
           font-family: Helvetica, sans-serif;
-          color: #080808;
+          color: #999999;
+        }
+
+        #sib-container input.input {
+          color: #000000 !important;
         }
 
         #sib-container a {
