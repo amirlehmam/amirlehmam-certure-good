@@ -61,22 +61,35 @@ const Hero = () => {
         <p className="text-body-lg text-gray-400 max-w-2xl mb-10">
           Nous auditons, formons et développons des solutions IA sur mesure pour les PME et ETI. Transformez la promesse technologique en gains opérationnels immédiats.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a href="https://calendly.com/whondydrouode/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white text-black pl-6 pr-2 py-2 rounded-full text-base font-medium hover:bg-gray-100 transition-all group">
-            Demander un audit
-            <span className="bg-black text-white rounded-full w-9 h-9 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <ArrowUpRight className="w-5 h-5" />
-            </span>
-          </a>
-          <div className="flex items-center gap-6 px-4">
-            <div className="text-center">
-              <p className="text-2xl font-bold text-white font-jakarta tracking-tighter">x5.2</p>
-              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-sans">ROI / 12 mois</p>
+        <div className="flex flex-col sm:flex-row items-center gap-8 mt-10">
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <a href="https://calendly.com/whondydrouode/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white text-black pl-6 pr-2 py-2 rounded-full text-base font-medium hover:bg-gray-100 transition-all group">
+              Demander un audit
+              <span className="bg-black text-white rounded-full w-9 h-9 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <ArrowUpRight className="w-5 h-5" />
+              </span>
+            </a>
+          </div>
+          <div className="flex items-center gap-6 px-4 py-2 bg-white/5 rounded-2xl border border-white/10">
+            <div className="bg-white p-3 rounded-2xl shadow-xl">
+              <img 
+                src="https://i.ibb.co/xtsHNyjR/logo-qualiopi-avec-action-de-formation-1.png" 
+                alt="Qualiopi Certifié" 
+                className="h-24 md:h-36 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            <div className="w-px h-8 bg-white/10"></div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-white font-jakarta tracking-tighter">97%</p>
-              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-sans">Satisfaction</p>
+            <div className="w-px h-12 bg-white/10"></div>
+            <div className="flex items-center gap-6">
+              <div className="text-center">
+                <p className="text-2xl font-bold text-white font-jakarta tracking-tighter">x5.2</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest font-sans">ROI / 12 mois</p>
+              </div>
+              <div className="w-px h-8 bg-white/10"></div>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-white font-jakarta tracking-tighter">97%</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest font-sans">Satisfaction</p>
+              </div>
             </div>
           </div>
         </div>
