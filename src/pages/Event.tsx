@@ -345,7 +345,7 @@ const Event = () => {
             </p>
             <div className="mt-8 flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-10 transition-all duration-500 max-w-[280px] md:max-w-none mx-auto">
               <img src="https://i.imgur.com/SFJ8DSP.png" alt="CCI" className="h-8 md:h-10 object-contain brightness-100 shadow-sm" referrerPolicy="no-referrer" />
-              <img src="https://i.imgur.com/tobsWmq.jpeg" alt="Bpifrance" className="h-8 md:h-10 object-contain rounded brightness-100 shadow-sm" referrerPolicy="no-referrer" />
+              <img src="https://i.ibb.co/69zLcNH/Capture-d-e-cran-2026-05-04-a-17-50-58.png" alt="Bpifrance" className="h-8 md:h-10 w-auto object-contain brightness-100" referrerPolicy="no-referrer" />
               <img src="https://i.ibb.co/KjVHCQbs/MEDEF-Yvelines-LOGO-RVB-1.png" alt="MEDEF" className="h-8 md:h-10 object-contain brightness-100" referrerPolicy="no-referrer" />
             </div>
           </motion.div>
@@ -578,7 +578,7 @@ const Event = () => {
               <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-4">Ils sont partenaires de l'evènement</p>
               <div className="flex justify-center items-center gap-6 md:gap-10">
                 <img src="https://i.imgur.com/SFJ8DSP.png" alt="CCI" className="h-6 md:h-7 object-contain" referrerPolicy="no-referrer" />
-                <img src="https://i.imgur.com/tobsWmq.jpeg" alt="Bpifrance" className="h-6 md:h-7 object-contain rounded" referrerPolicy="no-referrer" />
+                <img src="https://i.ibb.co/69zLcNH/Capture-d-e-cran-2026-05-04-a-17-50-58.png" alt="Bpifrance" className="h-6 md:h-8 w-auto object-contain" referrerPolicy="no-referrer" />
                 <img src="https://i.ibb.co/KjVHCQbs/MEDEF-Yvelines-LOGO-RVB-1.png" alt="MEDEF" className="h-6 md:h-7 object-contain" referrerPolicy="no-referrer" />
               </div>
             </div>
@@ -756,7 +756,7 @@ const Event = () => {
           <p className="text-gray-900 text-sm md:text-lg font-black tracking-widest mb-10 uppercase">Co-organisé par les acteurs majeurs du 78</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             <img src="https://i.imgur.com/SFJ8DSP.png" alt="CCI Versailles" className="h-12 md:h-16 object-contain" referrerPolicy="no-referrer" />
-            <img src="https://i.imgur.com/tobsWmq.jpeg" alt="Bpifrance" className="h-12 md:h-16 object-contain rounded" referrerPolicy="no-referrer" />
+            <img src="https://i.ibb.co/69zLcNH/Capture-d-e-cran-2026-05-04-a-17-50-58.png" alt="Bpifrance" className="h-12 md:h-16 w-auto object-contain" referrerPolicy="no-referrer" />
             <img src="https://i.ibb.co/KjVHCQbs/MEDEF-Yvelines-LOGO-RVB-1.png" alt="MEDEF Yvelines" className="h-14 md:h-20 object-contain bg-gray-50 p-3 rounded-xl" referrerPolicy="no-referrer" />
           </div>
         </div>
