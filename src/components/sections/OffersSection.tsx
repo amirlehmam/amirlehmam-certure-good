@@ -33,7 +33,7 @@ export default function OffersSection() {
   ];
 
   return (
-    <section id="offres" className="py-24 bg-white border-y border-border-subtle">
+    <section id="offres" className="py-24 bg-bg-secondary">
       <div className="max-w-[1120px] mx-auto px-6 md:px-12">
         <div className="mb-20">
           <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">

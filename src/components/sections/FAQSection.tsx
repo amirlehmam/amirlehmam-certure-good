@@ -32,7 +32,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="py-24 bg-bg-secondary/20 border-t border-border-default">
+    <section className="py-24 bg-bg-secondary/50 border-t border-border-default">
       <div className="max-w-[1120px] mx-auto px-6 md:px-12">
         <div className="mb-20">
           <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">

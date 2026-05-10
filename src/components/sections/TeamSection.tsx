@@ -17,7 +17,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="equipe" className="py-24 bg-white border-t border-border-subtle">
+    <section id="equipe" className="py-24 bg-white border-t border-border-default">
       <div className="max-w-[1120px] mx-auto px-6 md:px-12">
         <div className="mb-20">
           <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">

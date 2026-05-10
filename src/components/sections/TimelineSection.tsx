@@ -26,7 +26,7 @@ export default function TimelineSection() {
   ];
 
   return (
-    <section className="py-24 bg-bg-secondary/30">
+    <section className="py-24 bg-white border-t border-border-subtle">
       <div className="max-w-[1120px] mx-auto px-6 md:px-12">
         <div className="mb-12">
           <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">
@@ -34,7 +34,7 @@ export default function TimelineSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* AVANT - avec stroke terracotta */}
           <div className="bg-bg-tertiary border-2 border-terre rounded-xl p-8 md:p-10 relative">
             {/* Badge terracotta en haut */}
@@ -75,21 +75,6 @@ export default function TimelineSection() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <div className="text-5xl font-heavy text-navy mb-2 tracking-tighter">74 %</div>
-            <div className="text-sm text-text-secondary leading-relaxed">échouent à créer de la valeur sans cadre structuré.</div>
-          </div>
-          <div>
-            <div className="text-5xl font-heavy text-navy mb-2 tracking-tighter">4–6 h</div>
-            <div className="text-sm text-text-secondary leading-relaxed">gagnées par semaine et par collaborateur.</div>
-          </div>
-          <div>
-            <div className="text-5xl font-heavy text-navy mb-2 tracking-tighter">6 mois</div>
-            <div className="text-sm text-text-secondary leading-relaxed">pour rentabiliser un projet IA bien cadré.</div>
           </div>
         </div>
       </div>

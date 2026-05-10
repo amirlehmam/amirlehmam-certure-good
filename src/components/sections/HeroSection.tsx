@@ -72,7 +72,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
         >
           <a href="#diagnostic" className="relative bg-blue text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-navy transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2 group">
             <span className="absolute -top-2 -right-2 bg-coral-highlight text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md">
@@ -83,6 +83,19 @@ export default function HeroSection() {
           <a href="#offres" className="bg-white border-2 border-border-strong text-navy px-6 py-3 rounded-lg font-semibold text-base hover:bg-bg-secondary transition-all shadow-sm">
             Voir nos offres
           </a>
+        </motion.div>
+
+        {/* MINI-BANDEAU PARTENAIRES INSTITUTIONNELS */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-16 opacity-60 grayscale hover:grayscale-0 transition-all"
+        >
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Logo_Bpifrance.svg/200px-Logo_Bpifrance.svg.png" alt="Bpifrance" className="h-6 object-contain" />
+          <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/5/52/Logo_CCI_Versailles-Yvelines.svg/200px-Logo_CCI_Versailles-Yvelines.svg.png" alt="CCI Versailles" className="h-6 object-contain" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Logo_MEDEF.svg/200px-Logo_MEDEF.svg.png" alt="MEDEF" className="h-6 object-contain" />
+          <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/b/b3/France_Travail_Logo.svg/200px-France_Travail_Logo.svg.png" alt="France Travail" className="h-6 object-contain" />
         </motion.div>
 
         {/* LOGOS CLIENTS — INTÉGRÉS DANS LA HERO */}

@@ -2,14 +2,16 @@ import React from "react";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import HeroSection from "../components/sections/HeroSection";
-import KeyMetricsSection from "../components/sections/KeyMetricsSection";
+import PartnersSection from "../components/sections/PartnersSection";
+import EventGallerySection from "../components/sections/EventGallerySection";
 import StatsSection from "../components/sections/StatsSection";
+import MethodologySection from "../components/sections/MethodologySection";
+import VideoTestimonialsSection from "../components/sections/VideoTestimonialsSection";
 import DiagnosticSection from "../components/sections/DiagnosticSection";
 import TimelineSection from "../components/sections/TimelineSection";
 import CaseStudiesSection from "../components/sections/CaseStudiesSection";
 import RoadmapSection from "../components/sections/RoadmapSection";
 import OffersSection from "../components/sections/OffersSection";
-import TerrainSection from "../components/sections/TerrainSection";
 import TeamSection from "../components/sections/TeamSection";
 import EventSection from "../components/sections/EventSection";
 import FAQSection from "../components/sections/FAQSection";
@@ -23,16 +25,18 @@ export default function Home() {
       
       <main>
         <HeroSection />
-        <DiagnosticSection />
+        <PartnersSection />
+        <EventGallerySection />
         <StatsSection />
+        <MethodologySection />
+        <VideoTestimonialsSection />
+        <DiagnosticSection />
         <TimelineSection />
-        <RoadmapSection />
         <CaseStudiesSection />
+        <RoadmapSection />
         <OffersSection />
-        <KeyMetricsSection />
         <TeamSection />
         <EventSection />
-        <TerrainSection />
         <FAQSection />
         <CTAFinalSection />
       </main>
