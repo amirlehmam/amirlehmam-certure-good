@@ -6,22 +6,22 @@ export default function PartnersSection() {
   const partners = [
     {
       name: "Bpifrance",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Logo_Bpifrance.svg/512px-Logo_Bpifrance.svg.png",
+      src: "https://i.ibb.co/jqxsx3R/Logo-Bpifrance-2.jpg",
       role: "Partenaire financement"
     },
     {
       name: "CCI Versailles",
-      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/5/52/Logo_CCI_Versailles-Yvelines.svg/512px-Logo_CCI_Versailles-Yvelines.svg.png",
+      src: "https://www.entreprises.cci-paris-idf.fr/sites/default/files/inline-images/CCI%20versailles%20yvelines_0.png",
       role: "Événements & formation"
     },
     {
       name: "MEDEF 78",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Logo_MEDEF.svg/512px-Logo_MEDEF.svg.png",
+      src: "https://medefyvelines.com/wp-content/uploads/2024/11/MEDEF_Yvelines_LOGO_RVB-1.png",
       role: "Réseau dirigeants"
     },
     {
       name: "France Travail",
-      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/b/b3/France_Travail_Logo.svg/512px-France_Travail_Logo.svg.png",
+      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/8/8d/France-travail-2023.svg/1280px-France-travail-2023.svg.png",
       role: "Formation collective (POEI)"
     }
   ];
@@ -47,11 +47,11 @@ export default function PartnersSection() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="h-20 flex items-center justify-center mb-3 grayscale hover:grayscale-0 transition-all">
+              <div className="h-20 md:h-32 flex items-center justify-center mb-3 transition-all">
                 <img 
                   src={partner.src} 
                   alt={partner.name} 
-                  className="h-12 md:h-16 w-auto object-contain"
+                  className={`${i === 0 ? "h-16 md:h-24" : "h-12 md:h-16"} w-auto object-contain`}
                   referrerPolicy="no-referrer"
                 />
               </div>

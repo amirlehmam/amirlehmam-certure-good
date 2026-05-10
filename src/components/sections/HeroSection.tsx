@@ -6,27 +6,27 @@ export default function HeroSection() {
   const logos = [
     {
       name: "L'Oréal",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/L%27Oreal_logo.svg/512px-L%27Oreal_logo.svg.png"
-    },
-    {
-      name: "Carrefour",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Carrefour_logo.svg/512px-Carrefour_logo.svg.png"
-    },
-    {
-      name: "Nestlé",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nestle_logo_2015.svg/512px-Nestle_logo_2015.svg.png"
-    },
-    {
-      name: "SNCF",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/SNCF_logo.svg/512px-SNCF_logo.svg.png"
-    },
-    {
-      name: "Fnac Darty",
-      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/b/bc/Fnac_Darty_logo_2016.svg/512px-Fnac_Darty_logo_2016.svg.png"
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/L%27Or%C3%A9al_logo.svg/1280px-L%27Or%C3%A9al_logo.svg.png"
     },
     {
       name: "Engie",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Engie_logo.svg/512px-Engie_logo.svg.png"
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Logo-engie.svg/3840px-Logo-engie.svg.png"
+    },
+    {
+      name: "Carrefour",
+      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/3/3b/Logo_Carrefour.svg/3840px-Logo_Carrefour.svg.png"
+    },
+    {
+      name: "Nestlé",
+      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/8/8a/Logo_Nestle.svg/3840px-Logo_Nestle.svg.png"
+    },
+    {
+      name: "Fnac Darty",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Logo_Fnac_Darty.svg/1280px-Logo_Fnac_Darty.svg.png"
+    },
+    {
+      name: "France Travail",
+      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/8/8d/France-travail-2023.svg/1280px-France-travail-2023.svg.png"
     }
   ];
 
@@ -85,18 +85,34 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        {/* MINI-BANDEAU PARTENAIRES INSTITUTIONNELS */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-16 opacity-60 grayscale hover:grayscale-0 transition-all"
-        >
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Logo_Bpifrance.svg/200px-Logo_Bpifrance.svg.png" alt="Bpifrance" className="h-6 object-contain" />
-          <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/5/52/Logo_CCI_Versailles-Yvelines.svg/200px-Logo_CCI_Versailles-Yvelines.svg.png" alt="CCI Versailles" className="h-6 object-contain" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Logo_MEDEF.svg/200px-Logo_MEDEF.svg.png" alt="MEDEF" className="h-6 object-contain" />
-          <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/b/b3/France_Travail_Logo.svg/200px-France_Travail_Logo.svg.png" alt="France Travail" className="h-6 object-contain" />
-        </motion.div>
+        <div className="flex flex-col items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-8 transition-all"
+          >
+            <img src="https://i.ibb.co/jqxsx3R/Logo-Bpifrance-2.jpg" alt="Bpifrance" className="h-6 md:h-8 object-contain" />
+            <img src="https://www.entreprises.cci-paris-idf.fr/sites/default/files/inline-images/CCI%20versailles%20yvelines_0.png" alt="CCI Versailles" className="h-6 md:h-8 object-contain" />
+            <img src="https://medefyvelines.com/wp-content/uploads/2024/11/MEDEF_Yvelines_LOGO_RVB-1.png" alt="MEDEF" className="h-6 md:h-8 object-contain" />
+            <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/8d/France-travail-2023.svg/1280px-France-travail-2023.svg.png" alt="France Travail" className="h-6 md:h-8 object-contain" />
+          </motion.div>
+
+          {/* Qualiopi en gros */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="bg-white px-6 py-3 rounded-xl border border-border-subtle shadow-sm"
+          >
+            <img 
+              src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
+              alt="Qualiopi" 
+              className="h-16 md:h-20 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+        </div>
 
         {/* LOGOS CLIENTS — INTÉGRÉS DANS LA HERO */}
         <motion.div 
@@ -118,7 +134,7 @@ export default function HeroSection() {
                     src={logo.src} 
                     alt={logo.name}
                     referrerPolicy="no-referrer"
-                    className="h-10 md:h-12 w-auto object-contain opacity-50 hover:opacity-100 transition-all filter grayscale hover:grayscale-0 active:scale-95"
+                    className="h-10 md:h-12 w-auto object-contain transition-all active:scale-95"
                   />
                 </div>
               ))}

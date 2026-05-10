@@ -37,7 +37,18 @@ export default function Header() {
       >
         <header className="bg-white/90 backdrop-blur-md border-b border-border-subtle shadow-sm">
           <div className="max-w-[1120px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-            <Wordmark />
+            <div className="flex items-center gap-4">
+              <Wordmark />
+              <div className="hidden sm:block h-10 w-px bg-border-subtle mx-2"></div>
+            <div className="hidden sm:flex items-center px-4 py-2 bg-white rounded-lg border border-border-subtle shadow-sm">
+                <img 
+                  src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
+                  alt="Qualiopi" 
+                  className="h-14 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
             
             <nav className="hidden lg:flex items-center gap-10">
               <a href="/event" className="text-sm font-semibold text-blue hover:text-blue-hover transition-colors">Événement · 18 mai</a>

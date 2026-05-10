@@ -6,33 +6,24 @@ export default function EventGallerySection() {
   const events = [
     {
       title: "L'IA au service des PME",
-      type: "Conférence · CCI Versailles",
-      date: "18 MAI 2026",
-      dateLabel: "📅 18 MAI 2026",
       stats: "~200 dirigeants attendus",
       icon: <Users className="w-4 h-4" />,
       color: "bg-blue",
-      image: "https://images.unsplash.com/photo-1475721027785-f74dea327912?auto=format&fit=crop&q=80&w=800"
+      image: "https://i.ibb.co/mCghzGzk/PHOTO-2026-03-20-10-49-41-2.jpg"
     },
     {
       title: "Diagnostics Flash collectifs",
-      type: "Atelier · Bpifrance Le Lab",
-      date: "✓ MARS 2026",
-      dateLabel: "✓ MARS 2026",
       stats: "12 PME · 3h d'atelier",
       icon: <Building2 className="w-4 h-4" />,
       color: "bg-pin",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
+      image: "https://i.ibb.co/fV3wHRBF/PHOTO-2026-03-20-10-49-41.jpg"
     },
     {
       title: "POEI IA · Versailles",
-      type: "Formation collective · France Travail",
-      date: "✓ JANV 2026",
-      dateLabel: "✓ JANV 2026",
       stats: "15 collaborateurs formés",
       icon: <GraduationCap className="w-4 h-4" />,
       color: "bg-terre",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+      image: "https://i.ibb.co/QvF2TQtd/PHOTO-2026-03-20-10-56-36.jpg"
     }
   ];
 
@@ -67,14 +58,8 @@ export default function EventGallerySection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <div className={`absolute top-3 left-3 ${event.color} text-white px-3 py-1 rounded-full text-[10px] font-bold`}>
-                  {event.dateLabel}
-                </div>
               </div>
               <div className="p-5">
-                <div className="text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-2">
-                  {event.type}
-                </div>
                 <h3 className="font-bold text-navy mb-2">{event.title}</h3>
                 <div className="flex items-center gap-2 text-xs text-text-secondary">
                   {event.icon}
