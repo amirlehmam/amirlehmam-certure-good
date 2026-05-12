@@ -31,13 +31,13 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-24 pb-24 bg-gradient-to-br from-blue/5 via-coral-highlight/10 to-pin/5">
+    <section className="relative overflow-hidden pt-24 pb-24 bg-gradient-to-br from-blue/5 via-highlight-accent/10 to-pin/5">
       {/* Pattern grid subtil */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e8e6dd_1px,transparent_1px),linear-gradient(to_bottom,#e8e6dd_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.25]"></div>
       
       {/* Gradient orbs décoratifs */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-coral-highlight/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-highlight-accent/10 rounded-full blur-3xl"></div>
       
       {/* Container CENTRÉ */}
       <div className="relative max-w-5xl mx-auto px-8 text-center pt-20 md:pt-24">
@@ -54,7 +54,7 @@ export default function HeroSection() {
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              className="absolute bottom-2 left-0 h-4 bg-coral-highlight/60 -z-0"
+              className="absolute bottom-2 left-0 h-4 bg-highlight-accent/60 -z-0"
             ></motion.span>
           </span> dans votre PME.
         </motion.h1>
@@ -75,7 +75,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
         >
           <a href="#diagnostic" className="relative bg-blue text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-navy transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2 group">
-            <span className="absolute -top-2 -right-2 bg-coral-highlight text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md">
+            <span className="absolute -top-2 -right-2 bg-highlight-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md">
               NOUVEAU
             </span>
             Obtenir mon diagnostic gratuit →
@@ -103,12 +103,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="bg-white px-6 py-3 rounded-xl border border-border-subtle shadow-sm"
+            className="bg-white px-5 py-2 rounded-xl border border-border-subtle shadow-sm flex items-center justify-center translate-y-4"
           >
             <img 
               src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
               alt="Qualiopi" 
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-12 md:h-14 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -119,22 +119,22 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="pt-16 mt-8"
+          className="pt-8 mt-4"
         >
-          <div className="text-center text-xs uppercase tracking-wider text-text-tertiary mb-6 font-medium">
+          <div className="text-center text-[10px] md:text-xs uppercase tracking-[0.2em] text-text-tertiary mb-6 font-semibold opacity-60">
             Ils nous font confiance
           </div>
           
           <div className="relative flex overflow-hidden group/logos">
-            <div className="flex gap-20 items-center animate-scroll-logos whitespace-nowrap py-4">
+            <div className="flex gap-12 md:gap-20 items-center animate-scroll-logos whitespace-nowrap py-2">
               {/* Logos x3 pour scroll infini */}
               {[...logos, ...logos, ...logos].map((logo, i) => (
-                <div key={i} className="flex-shrink-0 px-4">
+                <div key={i} className="flex-shrink-0 px-2 flex items-center justify-center">
                   <img 
                     src={logo.src} 
                     alt={logo.name}
                     referrerPolicy="no-referrer"
-                    className="h-10 md:h-12 w-auto object-contain transition-all active:scale-95"
+                    className="h-6 md:h-8 max-w-[120px] w-auto object-contain transition-all active:scale-95 opacity-80 hover:opacity-100"
                   />
                 </div>
               ))}

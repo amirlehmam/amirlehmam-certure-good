@@ -33,16 +33,16 @@ export default function OffersSection() {
   ];
 
   return (
-    <section id="offres" className="py-24 bg-bg-secondary">
+    <section id="offres" className="py-24 bg-[#212E55]">
       <div className="max-w-[1120px] mx-auto px-6 md:px-12">
         <div className="mb-20">
-          <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">
+          <div className="text-xs font-bold uppercase tracking-widest text-white/60 mb-3">
              NOS OFFRES
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-text-title tracking-snug mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-snug mb-6">
              Quatre offres pour transformer votre entreprise.
           </h2>
-          <p className="text-md text-text-secondary leading-relaxed max-w-[800px]">
+          <p className="text-md text-white/80 leading-relaxed max-w-[800px]">
              On ne vend pas des outils. On génère du ROI avec l'IA — de l'audit jusqu'au déploiement complet.
           </p>
         </div>
@@ -53,45 +53,49 @@ export default function OffersSection() {
               key={i} 
               className={`relative rounded-2xl p-8 md:p-10 transition-all duration-300 group flex flex-col ${
                 offer.title === "Audit IA" 
-                ? 'bg-gradient-to-br from-blue/5 to-transparent border-2 border-blue shadow-lg hover:shadow-xl' 
-                : 'bg-bg-secondary border border-border-default hover:border-blue/50'
+                ? 'bg-white/5 border-2 border-[#F59E0B] shadow-lg hover:shadow-xl' 
+                : 'bg-white border border-border-default hover:border-blue/50'
               }`}
             >
               {offer.title === "Audit IA" && (
-                <div className="absolute -top-4 left-8 bg-blue text-white px-4 py-1.5 rounded-full text-[10px] font-heavy tracking-widest uppercase shadow-md">
+                <div className="absolute -top-4 left-8 bg-[#F59E0B] text-white px-4 py-1.5 rounded-full text-[10px] font-heavy tracking-widest uppercase shadow-md">
                   ⭐ POINT D'ENTRÉE RECOMMANDÉ
                 </div>
               )}
               
               <div className="flex justify-between items-start mb-8">
                 <div>
-                  <h3 className={`text-3xl font-heavy mb-1 ${offer.title === "Audit IA" ? 'text-navy' : 'text-text-title'}`}>
+                  <h3 className={`text-3xl font-heavy mb-1 ${offer.title === "Audit IA" ? 'text-white' : 'text-navy'}`}>
                     {offer.title}
                   </h3>
-                  <p className="text-sm text-text-tertiary font-medium">{offer.title === "Audit IA" ? "Le diagnostic complet" : (offer.title === "Formation équipes" ? "Acculturation & outils" : (offer.title === "Coaching dirigeant" ? "Accompagnement stratégique" : "Solutions sur mesure"))}</p>
+                  <p className={`text-sm font-medium ${offer.title === "Audit IA" ? 'text-white/70' : 'text-text-tertiary'}`}>
+                    {offer.title === "Audit IA" ? "Le diagnostic complet" : (offer.title === "Formation équipes" ? "Acculturation & outils" : (offer.title === "Coaching dirigeant" ? "Accompagnement stratégique" : "Solutions sur mesure"))}
+                  </p>
                 </div>
                 <div className="text-right">
                   {offer.title === "Audit IA" && (
-                    <div className="text-[10px] text-text-tertiary font-bold uppercase tracking-widest mb-1">à partir de</div>
+                    <div className="text-[10px] text-white/70 font-bold uppercase tracking-widest mb-1">à partir de</div>
                   )}
-                  <div className={`text-3xl font-heavy tabular-nums ${offer.title === "Audit IA" ? 'text-navy' : 'text-text-title'}`}>
+                  <div className={`text-3xl font-heavy tabular-nums ${offer.title === "Audit IA" ? 'text-white' : 'text-navy'}`}>
                     {offer.title === "Audit IA" ? "6 000 €" : offer.price}
                   </div>
                 </div>
               </div>
 
-              <p className="text-sm text-text-secondary mb-8 leading-relaxed flex-1">
+              <p className={`text-sm mb-8 leading-relaxed flex-1 ${offer.title === "Audit IA" ? 'text-white/90' : 'text-text-secondary'}`}>
                 {offer.desc}
               </p>
               
-              <div className="flex items-center gap-2 text-xs text-text-tertiary mb-8 font-medium">
+              <div className={`flex items-center gap-2 text-xs mb-8 font-medium ${offer.title === "Audit IA" ? 'text-white/60' : 'text-text-tertiary'}`}>
                 <Clock className="w-4 h-4 opacity-50" />
                 <span>{offer.details}</span>
               </div>
 
               <Button 
                 variant={offer.title === "Audit IA" ? "primary" : "secondary"} 
-                className="w-full text-sm font-bold uppercase tracking-widest py-4"
+                className={`w-full text-sm font-bold uppercase tracking-widest py-4 ${
+                  offer.title === "Audit IA" ? '!bg-[#F59E0B] !text-white border-none hover:!bg-[#D97706]' : '!bg-[#212E55] !text-white border-none hover:!bg-[#2d3e75]'
+                }`}
               >
                 {offer.price === "sur devis" ? "Demander un devis" : "En savoir plus"} →
               </Button>

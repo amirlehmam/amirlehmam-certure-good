@@ -11,7 +11,7 @@ export default function TeamSection() {
     {
       name: "Rudy Timothée",
       role: "Développement & Intégration IA",
-      desc: "Ingénieur IA spécialisé en automatisation. Conçoit et déploie des agents métier connectés à vos outils — opérationnels en quelques semaines.",
+      desc: "Ingénieur IA spécialisé en automatisation. Conçoit et déploie des agents métier connectés à vos outils.",
       image: "https://i.imgur.com/HVIPOER.jpeg"
     }
   ];
@@ -31,23 +31,23 @@ export default function TeamSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {members.map((member, i) => (
-            <div key={i} className="flex flex-col md:flex-row gap-8 items-start bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all group">
-              <div className="flex-shrink-0 mx-auto md:mx-0">
+            <div key={i} className="flex flex-col md:flex-row gap-6 items-center md:items-start bg-[#212E55] rounded-2xl p-6 shadow-sm hover:shadow-md transition-all group">
+              <div className="flex-shrink-0">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-32 h-32 md:w-40 md:h-40 rounded-xl object-cover ring-4 ring-blue/5 grayscale group-hover:grayscale-0 transition-all duration-base" 
+                  className="w-24 h-24 md:w-32 md:h-32 rounded-xl object-cover ring-4 ring-white/10 transition-all duration-500" 
                   referrerPolicy="no-referrer" 
                 />
               </div>
               <div className="text-center md:text-left">
-                <h3 className="text-2xl font-bold text-navy mb-1">{member.name}</h3>
-                <div className="text-sm font-semibold text-blue mb-4 uppercase tracking-widest">
+                <h3 className="text-lg font-bold text-white mb-0.5">{member.name}</h3>
+                <div className="text-[11px] font-semibold text-[#F59E0B] mb-3 uppercase tracking-[0.15em]">
                   {member.role}
                 </div>
-                <p className="text-sm text-text-secondary leading-relaxed">
+                <p className="text-xs text-white/80 leading-relaxed font-light">
                   {member.desc}
                 </p>
               </div>

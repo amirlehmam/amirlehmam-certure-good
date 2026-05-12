@@ -6,7 +6,6 @@ import PartnersSection from "../components/sections/PartnersSection";
 import EventGallerySection from "../components/sections/EventGallerySection";
 import StatsSection from "../components/sections/StatsSection";
 import MethodologySection from "../components/sections/MethodologySection";
-import VideoTestimonialsSection from "../components/sections/VideoTestimonialsSection";
 import DiagnosticSection from "../components/sections/DiagnosticSection";
 import TimelineSection from "../components/sections/TimelineSection";
 import CaseStudiesSection from "../components/sections/CaseStudiesSection";
@@ -29,7 +28,6 @@ export default function Home() {
         <EventGallerySection />
         <StatsSection />
         <MethodologySection />
-        <VideoTestimonialsSection />
         <DiagnosticSection />
         <TimelineSection />
         <CaseStudiesSection />

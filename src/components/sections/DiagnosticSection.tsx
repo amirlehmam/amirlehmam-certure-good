@@ -46,10 +46,10 @@ export default function DiagnosticSection() {
       status: "DÉBLOCAGE",
       desc: "POC rapide 2 semaines → validation ROI → déploiement.",
       tag: "VALIDATION",
-      color: "border-coral-highlight",
-      iconBg: "bg-coral-highlight/10",
-      iconColor: "text-coral-highlight",
-      badgeColor: "bg-coral-highlight",
+      color: "border-highlight-accent",
+      iconBg: "bg-highlight-accent/10",
+      iconColor: "text-highlight-accent",
+      badgeColor: "bg-highlight-accent",
       icon: <Zap className="w-4 h-4" />
     },
     {

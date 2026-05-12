@@ -13,7 +13,8 @@ export default function CaseStudiesSection() {
         { label: "ROI 4 mois", color: "pin" as const }
       ],
       quote: "« On a récupéré une journée complète par semaine. »",
-      placeholder: "Photo client / dirigeant ou capture d'écran agent IA"
+      placeholder: "Photo client / dirigeant ou capture d'écran agent IA",
+      image: "https://i.imgur.com/LUrL1zQ.jpeg"
     },
     {
       sector: "Services · 18 personnes",
@@ -24,7 +25,8 @@ export default function CaseStudiesSection() {
         { label: "15 min / propal", color: "pin" as const }
       ],
       quote: "« Notre taux de transformation a explosé. »",
-      placeholder: "Photo équipe commerciale ou interface CRM + agent"
+      placeholder: "Photo équipe commerciale ou interface CRM + agent",
+      image: "https://i.imgur.com/HQ6EGwA.jpeg"
     },
     {
       sector: "Industrie · 52 personnes",
@@ -35,7 +37,8 @@ export default function CaseStudiesSection() {
         { label: "−35 % erreurs", color: "pin" as const }
       ],
       quote: "« On pilote à la donnée, plus au feeling. »",
-      placeholder: "Photo atelier / dashboard de production temps réel"
+      placeholder: "Photo atelier / dashboard de production temps réel",
+      image: "https://i.imgur.com/GDuQDVT.jpeg"
     }
   ];
 
@@ -49,44 +52,49 @@ export default function CaseStudiesSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-text-title tracking-snug mb-6">
              Ce que ça donne en vrai, dans des PME comme la vôtre.
           </h2>
-          <p className="text-md text-text-secondary leading-relaxed">
-             Pas de promesse. Trois cas, trois secteurs, trois résultats.
-          </p>
+
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {cases.map((item, i) => (
-            <div key={i} className="flex flex-col h-full bg-bg-secondary rounded-lg overflow-hidden group">
-              <div className="aspect-video bg-bg-tertiary flex items-center justify-center text-xs text-text-tertiary">
-                Photo client / dirigeant
+            <div key={i} className="flex flex-col h-full bg-white rounded-xl overflow-hidden border border-border-subtle shadow-sm hover:shadow-md transition-all group">
+              <div className="aspect-video bg-bg-tertiary flex items-center justify-center overflow-hidden border-b border-border-subtle">
+                {item.image ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <div className="text-xs text-text-tertiary px-8 text-center">{item.placeholder}</div>
+                )}
               </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="text-xs uppercase tracking-wide text-text-tertiary mb-2">{item.sector}</div>
-                <h3 className="text-xl font-bold text-text-title mb-3">{item.title}</h3>
-                <p className="text-sm text-text-secondary mb-4 leading-relaxed">
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-tertiary mb-3 opacity-70">
+                  {item.sector}
+                </div>
+                <h3 className="text-lg font-bold text-navy mb-3 leading-snug group-hover:text-blue transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-text-secondary mb-6 leading-relaxed flex-1 font-light">
                   {item.desc}
                 </p>
-                <div className="flex gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {item.stats.map((stat, j) => (
-                    <span key={j} className="bg-pin-soft text-pin text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                    <span key={j} className="bg-pin-soft/50 text-pin text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-pin/10 whitespace-nowrap">
                       {stat.label}
                     </span>
                   ))}
                 </div>
-                <div className="mt-auto">
-                  <p className="font-serif italic text-text-secondary text-sm leading-relaxed tracking-wide">
+                <div className="mt-auto pt-6 border-t border-border-subtle/50">
+                  <p className="italic text-text-tertiary text-sm leading-relaxed">
                     {item.quote}
                   </p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <Button variant="secondary" href="/blog">
-            Voir toutes nos études de cas →
-          </Button>
         </div>
       </div>
     </section>

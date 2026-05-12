@@ -17,16 +17,21 @@ export default function EventSection() {
                En 90 minutes, identifiez les 3 leviers IA les plus rentables pour votre PME. Sans jargon. Avec MEDEF 78, Bpifrance et la CCI Versailles.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-8">
-              <Button variant="on-dark" href="/evenement">
+              <Button variant="on-dark" href="/evenement" className="whitespace-nowrap">
                 Je réserve ma place →
               </Button>
-              <div className="text-xs text-white/50 font-medium">Libre à 30 participants · gratuit · certification Qualiopi</div>
+              <div className="text-xs text-white/50 font-medium">Libre à 200 participants · gratuit · certification Qualiopi</div>
             </div>
           </div>
           
           <div className="relative group">
-            <div className="aspect-[16/10] bg-bg-dark-soft rounded-lg overflow-hidden border border-white/10 flex items-center justify-center p-12 text-center text-xs text-white/30 uppercase tracking-[0.2em] font-medium">
-               Image Événement
+            <div className="aspect-[16/10] bg-bg-dark-soft rounded-lg overflow-hidden border border-white/10">
+              <img 
+                src="https://i.imgur.com/XadE8YP.jpeg" 
+                alt="Événement CCI Versailles" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue/10 rounded-full blur-3xl pointer-events-none"></div>
           </div>
