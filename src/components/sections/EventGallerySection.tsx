@@ -1,28 +1,34 @@
 import React from "react";
-import { Users, Building2, GraduationCap, Calendar, ArrowRight } from "lucide-react";
+import { Users, GraduationCap, Mic, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function EventGallerySection() {
   const events = [
     {
       title: "L'IA au service des PME",
-      stats: "~200 dirigeants attendus",
+      subtitle: "Masterclass · CCI Versailles",
+      stats: "90 minutes · 200 dirigeants",
       icon: <Users className="w-4 h-4" />,
-      color: "bg-blue",
+      tag: "📅 18 MAI 2026",
+      tagColor: "bg-blue",
       image: "https://i.ibb.co/mCghzGzk/PHOTO-2026-03-20-10-49-41-2.jpg"
     },
     {
-      title: "Diagnostics Flash collectifs",
-      stats: "12 PME · 3h d'atelier",
-      icon: <Building2 className="w-4 h-4" />,
-      color: "bg-pin",
+      title: "8 sessions collectives",
+      subtitle: "Journées de formation · Boost Camp IA",
+      stats: "CCI Versailles · En présentiel",
+      icon: <GraduationCap className="w-4 h-4" />,
+      tag: "✓ AVR–JUIN 2026",
+      tagColor: "bg-pin",
       image: "https://i.ibb.co/fV3wHRBF/PHOTO-2026-03-20-10-49-41.jpg"
     },
     {
-      title: "POEI IA · Versailles",
-      stats: "15 collaborateurs formés",
-      icon: <GraduationCap className="w-4 h-4" />,
-      color: "bg-terre",
+      title: "Retours d'expérience dirigeants",
+      subtitle: "Podcast · IA & PME",
+      stats: "15–20 min par épisode",
+      icon: <Mic className="w-4 h-4" />,
+      tag: "🎙️ MENSUEL",
+      tagColor: "bg-terre",
       image: "https://i.ibb.co/QvF2TQtd/PHOTO-2026-03-20-10-56-36.jpg"
     }
   ];
@@ -34,14 +40,14 @@ export default function EventGallerySection() {
           Sur le terrain · Derniers 6 mois
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-          Nous construisons l'écosystème IA des PME. Concrètement.
+          Nous construisons l'écosystème IA des PME, concrètement.
         </h2>
         <p className="text-text-secondary mb-12 max-w-3xl leading-relaxed">
-          Chaque mois, nous organisons ou co-animons des événements avec nos partenaires institutionnels. Pas de webinaire — du présentiel, des ateliers, des diagnostics Flash en direct.
+          Nous intervenons en présentiel pour structurer l'écosystème IA des PME françaises. Masterclass, formations collectives, contenus experts — tout ce qui aide les dirigeants à passer à l'acte.
         </p>
 
         {/* Grid 3 colonnes photos événements */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {events.map((event, i) => (
             <motion.div 
               key={i}
@@ -58,8 +64,14 @@ export default function EventGallerySection() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
+                <div className={`absolute top-3 left-3 ${event.tagColor} text-white px-3 py-1 rounded-full text-xs font-semibold`}>
+                  {event.tag}
+                </div>
               </div>
               <div className="p-5">
+                <div className="text-xs uppercase tracking-wide text-text-tertiary mb-2">
+                  {event.subtitle}
+                </div>
                 <h3 className="font-bold text-navy mb-2">{event.title}</h3>
                 <div className="flex items-center gap-2 text-xs text-text-secondary">
                   {event.icon}
@@ -69,39 +81,6 @@ export default function EventGallerySection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Timeline événements à venir */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-xl p-6 border-l-4 border-blue shadow-sm"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <Calendar className="w-5 h-5 text-blue" />
-            <h3 className="font-bold text-navy uppercase tracking-widest text-sm">Prochains événements ouverts</h3>
-          </div>
-          <div className="space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-border-subtle">
-              <div>
-                <div className="text-sm font-semibold text-navy">L'IA pour les PME · CCI Versailles</div>
-                <div className="text-xs text-text-tertiary">18 mai 2026 · 200 places</div>
-              </div>
-              <a href="/event" className="text-sm font-bold text-blue hover:underline flex items-center gap-1 group">
-                Réserver <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
-                <div className="text-sm font-semibold text-navy">Atelier Diagnostic Flash · MEDEF 78</div>
-                <div className="text-xs text-text-tertiary">4 juin 2026 · 30 places</div>
-              </div>
-              <a href="#" className="text-sm font-bold text-blue hover:underline flex items-center gap-1 group">
-                Réserver <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

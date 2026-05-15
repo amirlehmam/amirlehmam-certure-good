@@ -9,9 +9,9 @@ export default function TeamSection() {
       image: "https://i.imgur.com/jctvwLR.jpeg"
     },
     {
-      name: "Rudy Timothée",
-      role: "Développement & Intégration IA",
-      desc: "Ingénieur IA spécialisé en automatisation. Conçoit et déploie des agents métier connectés à vos outils.",
+      name: "Rudy Thimothée",
+      role: "Directeur IA HumanSkills",
+      desc: "Ingénieur IA spécialisé en automatisation. Conçoit et déploie des agents métier connectés à vos outils — opérationnels en quelques semaines.",
       image: "https://i.imgur.com/HVIPOER.jpeg"
     }
   ];
@@ -24,7 +24,7 @@ export default function TeamSection() {
              L'ÉQUIPE
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-text-title tracking-snug mb-6">
-             Des experts à vos côtés. Pas des commerciaux.
+             Des experts à vos côtés.
           </h2>
           <p className="text-md text-text-secondary leading-relaxed max-w-[800px]">
              Tous nos consultants ont exercé en entreprise. Ils comprennent les contraintes réelles d'une PME — budget serré, équipes peu techniques, urgences opérationnelles.

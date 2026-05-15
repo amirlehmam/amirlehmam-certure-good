@@ -6,23 +6,15 @@ export default function PartnersSection() {
   const partners = [
     {
       name: "Bpifrance",
-      src: "https://i.ibb.co/jqxsx3R/Logo-Bpifrance-2.jpg",
-      role: "Partenaire financement"
+      src: "https://i.ibb.co/jqxsx3R/Logo-Bpifrance-2.jpg"
     },
     {
       name: "CCI Versailles",
-      src: "https://www.entreprises.cci-paris-idf.fr/sites/default/files/inline-images/CCI%20versailles%20yvelines_0.png",
-      role: "Événements & formation"
+      src: "https://www.entreprises.cci-paris-idf.fr/sites/default/files/inline-images/CCI%20versailles%20yvelines_0.png"
     },
     {
       name: "MEDEF 78",
-      src: "https://medefyvelines.com/wp-content/uploads/2024/11/MEDEF_Yvelines_LOGO_RVB-1.png",
-      role: "Réseau dirigeants"
-    },
-    {
-      name: "France Travail",
-      src: "https://upload.wikimedia.org/wikipedia/fr/thumb/8/8d/France-travail-2023.svg/1280px-France-travail-2023.svg.png",
-      role: "Formation collective (POEI)"
+      src: "https://medefyvelines.com/wp-content/uploads/2024/11/MEDEF_Yvelines_LOGO_RVB-1.png"
     }
   ];
 
@@ -36,8 +28,8 @@ export default function PartnersSection() {
           Nous intervenons avec les acteurs qui structurent l'écosystème PME.
         </h2>
         
-        {/* Grid 4 colonnes avec logos GROS + description */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {/* Grid 3 colonnes avec logos GROS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-center">
           {partners.map((partner, i) => (
             <motion.div 
               key={i}
@@ -47,16 +39,13 @@ export default function PartnersSection() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="h-20 md:h-32 flex items-center justify-center mb-3 transition-all">
+              <div className="h-16 md:h-24 flex items-center justify-center transition-all">
                 <img 
                   src={partner.src} 
                   alt={partner.name} 
-                  className={`${i === 0 ? "h-16 md:h-24" : "h-12 md:h-16"} w-auto object-contain`}
+                  className="h-full w-auto object-contain max-w-[200px]"
                   referrerPolicy="no-referrer"
                 />
-              </div>
-              <div className="text-xs text-text-secondary font-medium">
-                {partner.role}
               </div>
             </motion.div>
           ))}

@@ -1,46 +1,49 @@
 import React from "react";
-import { Shield, FileText, Users, Award, ArrowRight } from "lucide-react";
+import { Shield, Map, Users, Award, GraduationCap } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function MethodologySection() {
   const pillars = [
     {
-      title: "Conformité & Sécurité",
+      title: "Co-conception et déploiement avec la PME",
+      icon: <Users className="w-6 h-6 text-blue" />,
+      bg: "bg-blue/10",
+      description: "Ateliers terrain, itération, adoption progressive. Nous déployons avec vous, pas à votre place."
+    },
+    {
+      title: "Cartographie",
+      icon: <Map className="w-6 h-6 text-terre" />,
+      bg: "bg-terre/10",
+      description: "Processus métier, flux de données, cas d'usage à ROI mesurable. Une roadmap 12 mois validée avec vous avant le premier euro dépensé."
+    },
+    {
+      title: "On forme vos équipes",
+      icon: <GraduationCap className="w-6 h-6 text-[#F59E0B]" />,
+      bg: "bg-[#F59E0B]/10",
+      description: "Charte d'usage, bibliothèque de prompts, sessions pratiques. Vos collaborateurs maîtrisent l'outil dès la 3ᵉ semaine. Pas de dépendance au prestataire."
+    },
+    {
+      title: "On déploie en conformité et sécurité",
       icon: <Shield className="w-6 h-6 text-pin" />,
       bg: "bg-pin/10",
-      description: "RGPD, hébergement France, instances privées, suivi des accès. Vos données restent vos données.",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      title: "Cartographie avant tout",
-      icon: <FileText className="w-6 h-6 text-blue" />,
-      bg: "bg-blue/10",
-      description: "Avant de déployer, on cartographie. Processus métier, cas d'usage ROI, roadmap 12 mois validée.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      title: "Formation intégrée",
-      icon: <Users className="w-6 h-6 text-terre" />,
-      bg: "bg-terre/10",
-      description: "Vos équipes ne subissent pas l'outil. Elles le maîtrisent. Charte d usage, prompts validés.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+      description: "RGPD by design, logs d'accès.... Audit de conformité inclus. Vos données restent vos données."
     }
   ];
 
   return (
     <section className="py-20 bg-bg-secondary">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-32">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <div className="text-xs uppercase tracking-wider text-text-tertiary mb-2">
           Notre approche · Structurée & Sécurisée
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-          Une méthodologie qui rassure autant qu'elle transforme.
+          Une méthodologie structurée. De l'audit au déploiement.
         </h2>
         <p className="text-text-secondary mb-12 max-w-3xl leading-relaxed">
-          L'IA en PME, ce n'est pas un chatbot bricolé. C'est une infrastructure qui respecte vos contraintes réglementaires, sécurise vos données, et s'intégre à votre existant sans casser ce qui fonctionne.
+          Nous n'imposons pas d'outil. Nous cartographions vos processus, identifions les cas d'usage à ROI rapide, formons vos équipes et déployons en conformité totale. Chaque étape est documentée, mesurable, sécurisée.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {pillars.map((pillar, i) => (
             <motion.div 
               key={i}
@@ -53,18 +56,10 @@ export default function MethodologySection() {
               <div className={`w-12 h-12 ${pillar.bg} rounded-lg flex items-center justify-center mb-4`}>
                 {pillar.icon}
               </div>
-              <h3 className="text-lg font-bold text-navy mb-3">{pillar.title}</h3>
-              <p className="text-sm text-text-secondary leading-relaxed mb-4">
+              <h3 className="text-lg font-bold text-navy mb-3 leading-snug">{pillar.title}</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
                 {pillar.description}
               </p>
-              {/* Screenshot exemple fictif avec image unplash */}
-              <div className="aspect-video bg-bg-tertiary rounded-lg overflow-hidden border border-border-subtle">
-                <img 
-                  src={pillar.image} 
-                  alt={pillar.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </motion.div>
           ))}
         </div>
@@ -82,8 +77,13 @@ export default function MethodologySection() {
               <div className="font-bold text-navy mb-1 tracking-tight">Certification Qualiopi · Financement OPCO</div>
               <div className="text-sm text-text-secondary leading-relaxed">
                 Nos formations sont finançables à 100%. Vous réduisez votre investissement dès le premier euro.{" "}
-                <a href="#" className="text-pin font-bold hover:underline inline-flex items-center gap-1">
-                  Vérifier mon éligibilité <ArrowRight className="w-3 h-3" />
+                <a 
+                  href="https://quel-est-mon-opco.francecompetences.fr/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-pin font-bold hover:underline inline-flex items-center gap-1"
+                >
+                  Vérifier mon éligibilité →
                 </a>
               </div>
             </div>

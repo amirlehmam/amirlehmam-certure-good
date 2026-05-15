@@ -48,9 +48,9 @@ export default function TimelineSection() {
             </h3>
             <div className="space-y-8">
               {moments.map(m => (
-                <div key={m.time} className="opacity-60">
-                  <div className="text-[10px] font-mono font-bold text-text-tertiary mb-1 uppercase tracking-tight">{m.time}</div>
-                  <p className="text-sm text-text-secondary leading-relaxed">{m.avant}</p>
+                <div key={m.time}>
+                  <div className="text-[10px] font-mono font-bold text-[#000000]/60 mb-1 uppercase tracking-tight">{m.time}</div>
+                  <p className="text-sm text-[#000000] leading-relaxed">{m.avant}</p>
                 </div>
               ))}
             </div>
