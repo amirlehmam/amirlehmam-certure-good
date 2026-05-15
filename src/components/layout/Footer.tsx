@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-xs uppercase tracking-wider font-bold text-text-title">Contact</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-text-secondary hover:text-blue transition-colors font-semibold">Diagnostic gratuit</a></li>
+              <li><a href="https://calendly.com/whondydrouode/30min" className="text-sm text-text-secondary hover:text-blue transition-colors font-semibold">Prendre rendez-vous gratuitement</a></li>
               <li><a href="mailto:contact@certure.fr" className="text-sm text-text-secondary hover:text-blue transition-colors">contact@certure.fr</a></li>
             </ul>
           </div>

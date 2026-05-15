@@ -93,6 +93,7 @@ export default function OffersSection() {
 
               <Button 
                 variant={offer.title === "Audit IA" ? "primary" : "secondary"} 
+                href="https://calendly.com/whondydrouode/30min"
                 className={`w-full text-sm font-bold uppercase tracking-widest py-4 ${
                   offer.title === "Audit IA" ? '!bg-[#F59E0B] !text-white border-none hover:!bg-[#D97706]' : '!bg-[#212E55] !text-white border-none hover:!bg-[#2d3e75]'
                 }`}
@@ -108,7 +109,11 @@ export default function OffersSection() {
              <span className="font-bold text-text-title uppercase tracking-widest text-xs inline-block mb-2 md:mb-0 md:mr-3">Certification Qualiopi</span>
              Vos formations sont finançables via votre OPCO. Réduisez votre investissement dès le premier euro.
           </p>
-          <Button variant="secondary" className="whitespace-nowrap bg-white text-xs font-heavy tracking-widest uppercase px-8">
+          <Button 
+            variant="secondary" 
+            href="https://quel-est-mon-opco.francecompetences.fr/"
+            className="whitespace-nowrap bg-white text-xs font-heavy tracking-widest uppercase px-8"
+          >
             Vérifier mon éligibilité →
           </Button>
         </div>

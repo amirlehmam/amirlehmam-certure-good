@@ -14,7 +14,7 @@ export default function CTAFinalSection() {
                En 30 minutes, nos experts identifient les 3 leviers IA les plus rentables pour votre activité. Sans engagement. Sans jargon. Juste des résultats concrets.
             </p>
             <div className="flex flex-col items-center gap-8">
-              <Button variant="primary" className="text-lg px-8 py-4" href="#contact">
+              <Button variant="primary" className="text-lg px-8 py-4" href="https://calendly.com/whondydrouode/30min">
                 Prendre rendez-vous gratuitement →
               </Button>
               <div className="text-[11px] uppercase tracking-widest text-text-tertiary font-bold flex flex-wrap justify-center gap-x-8 gap-y-4">

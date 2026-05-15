@@ -49,7 +49,7 @@ export default function Header() {
               <a href="#equipe" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Notre équipe</a>
               <a href="#etudes-de-cas" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Études de cas</a>
               <a href="/blog" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Blog</a>
-              <Button variant="primary" className="text-sm px-4 py-2" href="#diagnostic">
+              <Button variant="primary" className="text-sm px-4 py-2" href="https://calendly.com/whondydrouode/30min">
                 Diagnostic gratuit
               </Button>
             </nav>
