@@ -11,7 +11,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="section-label mb-4 md:mb-8 mx-auto"
+            className="section-label mt-6 md:mt-0 mb-4 md:mb-8 mx-auto"
           >
             Collectif IA pour les TPE et PME
           </motion.div>
