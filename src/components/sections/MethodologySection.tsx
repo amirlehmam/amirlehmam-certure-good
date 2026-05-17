@@ -1,95 +1,123 @@
-import React from "react";
-import { Shield, Map, Users, Award, GraduationCap } from "lucide-react";
-import { motion } from "motion/react";
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp, Target, Map, BookOpen, Users, Code, Plus } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { Button } from "../ui/Button";
 
 export default function MethodologySection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   const pillars = [
     {
-      title: "Co-conception et déploiement avec la PME",
-      icon: <Users className="w-6 h-6 text-blue" />,
-      bg: "bg-blue/10",
-      description: "Ateliers terrain, itération, adoption progressive. Nous déployons avec vous, pas à votre place."
+      title: "Cadrer",
+      icon: <Target className="w-5 h-5" />,
+      description: "Nous démarrons par des échanges avec vous pour comprendre votre maturité IA, vos enjeux, vos freins et les problématiques métiers de votre industrie."
     },
     {
-      title: "Cartographie",
-      icon: <Map className="w-6 h-6 text-terre" />,
-      bg: "bg-terre/10",
-      description: "Processus métier, flux de données, cas d'usage à ROI mesurable. Une roadmap 12 mois validée avec vous avant le premier euro dépensé."
+      title: "Cartographier",
+      icon: <Map className="w-5 h-5" />,
+      description: "On audite vos équipes et vos process pour identifier où l'IA crée de la valeur. Vous repartez avec une feuille de route avec des projets à ROI positifs à déployer tout de suite et les chantiers qui transformeront votre entreprise."
     },
     {
-      title: "On forme vos équipes",
-      icon: <GraduationCap className="w-6 h-6 text-[#F59E0B]" />,
-      bg: "bg-[#F59E0B]/10",
-      description: "Charte d'usage, bibliothèque de prompts, sessions pratiques. Vos collaborateurs maîtrisent l'outil dès la 3ᵉ semaine. Pas de dépendance au prestataire."
+      title: "Décider",
+      icon: <BookOpen className="w-5 h-5" />,
+      description: "Nous formons vos dirigeants pour maîtriser l’IA et ses outils, identifier les opportunités pour votre TPE/ PME et encadrer les usages pour limiter les risques."
     },
     {
-      title: "On déploie en conformité et sécurité",
-      icon: <Shield className="w-6 h-6 text-pin" />,
-      bg: "bg-pin/10",
-      description: "RGPD by design, logs d'accès.... Audit de conformité inclus. Vos données restent vos données."
+      title: "Accompagner",
+      icon: <Users className="w-5 h-5" />,
+      description: "Nous formons vos collaborateurs pour qu’ils arrêtent de perdre du temps sur leurs tâches répétitives, utilisent l'IA en toute sécurité et travaillent plus efficacement au quotidien."
+    },
+    {
+      title: "Déployer",
+      icon: <Code className="w-5 h-5" />,
+      description: "Nous développons la solution adaptée à votre PME, à vos données et à vos process, pour transformer un projet IA en avantage concurrentiel."
     }
   ];
 
   return (
-    <section className="py-20 bg-bg-secondary">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
-        <div className="text-xs uppercase tracking-wider text-text-tertiary mb-2">
-          Notre approche · Structurée & Sécurisée
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-          Une méthodologie structurée. De l'audit au déploiement.
-        </h2>
-        <p className="text-text-secondary mb-12 max-w-3xl leading-relaxed">
-          Nous n'imposons pas d'outil. Nous cartographions vos processus, identifions les cas d'usage à ROI rapide, formons vos équipes et déployons en conformité totale. Chaque étape est documentée, mesurable, sécurisée.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {pillars.map((pillar, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-sm border border-border-subtle"
-            >
-              <div className={`w-12 h-12 ${pillar.bg} rounded-lg flex items-center justify-center mb-4`}>
-                {pillar.icon}
-              </div>
-              <h3 className="text-lg font-bold text-navy mb-3 leading-snug">{pillar.title}</h3>
-              <p className="text-sm text-text-secondary leading-relaxed">
-                {pillar.description}
-              </p>
-            </motion.div>
-          ))}
+    <section className="pt-12 pb-24 bg-white">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="mb-12">
+          <div className="section-label mb-8">La Méthodologie</div>
+          <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-[1.1] max-w-4xl">
+            Une méthodologie construite avec des dirigeants de TPE et PME <span className="editorial-title text-text-tertiary">pour des TPE et PME.</span>
+          </h2>
         </div>
 
-        {/* Certification banner */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-pin-soft/30 border-l-4 border-pin rounded-r-lg p-6"
-        >
-          <div className="flex items-start gap-4">
-            <Award className="w-6 h-6 text-pin flex-shrink-0 mt-0.5" />
-            <div>
-              <div className="font-bold text-navy mb-1 tracking-tight">Certification Qualiopi · Financement OPCO</div>
-              <div className="text-sm text-text-secondary leading-relaxed">
-                Nos formations sont finançables à 100%. Vous réduisez votre investissement dès le premier euro.{" "}
-                <a 
-                  href="https://quel-est-mon-opco.francecompetences.fr/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-pin font-bold hover:underline inline-flex items-center gap-1"
-                >
-                  Vérifier mon éligibilité →
-                </a>
-              </div>
+        <div className="flex flex-col lg:flex-row gap-20 items-start">
+          {/* Photo à gauche */}
+          <div className="lg:w-5/12 w-full">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-blue/5 -translate-x-4 translate-y-4 -z-10 transition-transform group-hover:-translate-x-6 group-hover:translate-y-6"></div>
+              <img 
+                src="https://i.ibb.co/zHrLTQzH/Design-sans-titre-2026-05-17-T231556-666.png" 
+                alt="Audit IA Terrain dans une PME française" 
+                className="w-full aspect-[4/5] md:h-[600px] object-cover shadow-premium"
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
             </div>
           </div>
-        </motion.div>
+
+          {/* Accordion à droite */}
+          <div className="lg:w-7/12 w-full space-y-px bg-border ring-1 ring-border">
+            {pillars.map((pillar, i) => (
+              <div key={i} className="bg-white overflow-hidden">
+                <button 
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full p-6 md:p-8 flex items-center justify-between text-left hover:bg-bg-secondary transition-colors group"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
+                    <span className="text-[11px] font-black text-blue/30 tracking-widest uppercase">Phase 0{i + 1}</span>
+                    <h3 className="text-[20px] font-bold text-text-primary group-hover:text-blue transition-colors">{pillar.title}</h3>
+                  </div>
+                  <Plus className={`w-5 h-5 transition-transform duration-500 ${openIndex === i ? 'rotate-45 text-blue' : 'text-text-tertiary'}`} />
+                </button>
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <div className="px-8 pb-12 pt-0 flex gap-8">
+                        <div className="w-[66px] flex-shrink-0 flex justify-center">
+                           <div className="w-12 h-12 bg-blue-soft text-blue flex items-center justify-center">
+                             {pillar.icon}
+                           </div>
+                        </div>
+                        <p className="body-text text-[16px] leading-[1.8] font-light max-w-xl">
+                          {pillar.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mid-CTA section added here */}
+        <div className="mt-20 md:mt-32 p-8 md:p-16 bg-bg-secondary border border-border flex flex-col md:flex-row items-center justify-between gap-12 group">
+          <div className="max-w-xl">
+            <h3 className="text-[28px] md:text-[32px] font-bold text-text-primary leading-tight mb-4 transition-colors group-hover:text-blue">
+              Vous ne savez pas par où commencer ?
+            </h3>
+            <p className="text-[18px] text-text-secondary font-light">
+              Nous sommes là pour vous aider à y voir clair et définir vos premières priorités.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 min-w-[300px]">
+             <div className="text-[11px] font-black uppercase tracking-[0.2em] text-text-tertiary mb-2">Échangez rapidement avec nos experts</div>
+             <Button variant="primary" className="py-5" href="https://calendly.com/whondydrouode/30min">
+               Réserver un créneau
+             </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+

@@ -26,52 +26,43 @@ export default function TimelineSection() {
   ];
 
   return (
-    <section className="py-24 bg-white border-t border-border-subtle">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-12">
-        <div className="mb-12">
-          <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">
-             L'IMPACT CONCRET SUR VOTRE SEMAINE
-          </div>
+    <section className="py-24 bg-white border-b border-border">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="mb-16">
+          <div className="section-label mb-4">Impact concret</div>
+          <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-[1.1]">
+            Hier vs Aujourd'hui.
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* AVANT - avec stroke terracotta */}
-          <div className="bg-bg-tertiary border-2 border-terre rounded-xl p-8 md:p-10 relative">
-            {/* Badge terracotta en haut */}
-            <div className="absolute -top-4 left-8 bg-terre text-white px-4 py-1 rounded-full text-xs font-semibold shadow-sm">
-              ⚠️ SANS CADRE
-            </div>
-            
-            <h3 className="text-sm font-bold uppercase tracking-widest text-terre mb-8 flex items-center gap-2">
-              <X className="w-4 h-4" />
-              Aujourd'hui — Sans cadre IA
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          {/* AVANT */}
+          <div className="apple-card bg-bg-secondary border-none shadow-none p-10">
+            <h3 className="section-label mb-10 text-text-tertiary flex items-center gap-2">
+              <X size={14} />
+              Aujourd'hui — Flux désordonnés
             </h3>
-            <div className="space-y-8">
+            <div className="space-y-10">
               {moments.map(m => (
-                <div key={m.time}>
-                  <div className="text-[10px] font-mono font-bold text-[#000000]/60 mb-1 uppercase tracking-tight">{m.time}</div>
-                  <p className="text-sm text-[#000000] leading-relaxed">{m.avant}</p>
+                <div key={m.time} className="group">
+                  <div className="text-[11px] font-bold text-text-tertiary mb-2 uppercase tracking-widest leading-none">{m.time}</div>
+                  <p className="text-[15px] text-text-secondary leading-relaxed font-light">{m.avant}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* APRÈS - fond vert léger */}
-          <div className="bg-pin-soft/30 border-2 border-pin rounded-xl p-8 md:p-10 relative">
-            {/* Badge "Avec Certure" */}
-            <div className="absolute -top-4 left-8 bg-pin text-white px-4 py-1.5 rounded-full text-[10px] font-heavy tracking-widest uppercase shadow-sm">
-              ✓ AVEC CERTURE
-            </div>
-            
-            <h3 className="text-sm font-bold uppercase tracking-widest text-pin mb-8 flex items-center gap-2">
-              <Check className="w-4 h-4" />
-              IA structurée & ROI mesuré
+          {/* APRÈS */}
+          <div className="apple-card border-blue/20 p-10 ring-1 ring-blue/5">
+            <h3 className="section-label mb-10 text-blue flex items-center gap-2 selection:bg-blue/20">
+              <Check size={14} />
+              Avec notre accompagnement
             </h3>
-            <div className="space-y-8">
+            <div className="space-y-10">
               {moments.map(m => (
                 <div key={m.time}>
-                  <div className="text-[10px] font-mono font-bold text-pin/70 mb-1 uppercase tracking-tight">{m.time}</div>
-                  <p className="text-md font-bold text-text-title leading-snug">{m.apres}</p>
+                  <div className="text-[11px] font-bold text-blue/40 mb-2 uppercase tracking-widest leading-none">{m.time}</div>
+                  <p className="text-[17px] font-bold text-text-primary leading-tight">{m.apres}</p>
                 </div>
               ))}
             </div>

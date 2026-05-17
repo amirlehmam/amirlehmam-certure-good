@@ -1,78 +1,85 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Button } from "../ui/Button";
+import { CheckCircle, Shield, Award } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-32 bg-gradient-to-br from-blue/5 via-highlight-accent/10 to-pin/5">
-      {/* Pattern grid subtil */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e8e6dd_1px,transparent_1px),linear-gradient(to_bottom,#e8e6dd_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.25]"></div>
-      
-      {/* Gradient orbs décoratifs */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-highlight-accent/10 rounded-full blur-3xl"></div>
-      
-      {/* Container CENTRÉ */}
-      <div className="relative max-w-5xl mx-auto px-8 text-center pt-12 md:pt-16">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-heavy tracking-tight leading-[1.3] text-navy mb-8 max-w-4xl mx-auto text-center"
-        >
-          L'IA <span className="relative inline-block">
-            <span className="relative z-10 font-bold italic">est déjà</span>
-            <motion.span 
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              className="absolute bottom-2 left-0 h-4 bg-highlight-accent/60 -z-0"
-            ></motion.span>
-          </span> dans votre PME.
-        </motion.h1>
-         
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-text-secondary mb-10 max-w-3xl mx-auto leading-relaxed text-center"
-        >
-          Nous la diagnostiquons, la structurons, la déployons.
-        </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <a href="https://calendly.com/whondydrouode/30min" className="relative bg-blue text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-navy transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2 group">
-            <span className="absolute -top-2 -right-2 bg-highlight-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md">
-              NOUVEAU
-            </span>
-            Obtenir mon diagnostic gratuit →
-          </a>
-          <a href="#offres" className="bg-white border-2 border-border-strong text-navy px-6 py-3 rounded-lg font-semibold text-base hover:bg-bg-secondary transition-all shadow-sm">
-            Voir nos offres
-          </a>
-        </motion.div>
+    <section className="relative pt-20 md:pt-32 pb-12 bg-bg-secondary overflow-hidden text-center">
+      <div className="relative max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="section-label mb-4 md:mb-8 mx-auto"
+          >
+            Collectif IA pour les TPE et PME
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-[36px] md:text-[64px] font-bold text-text-primary tracking-tight leading-[1.1] mb-6"
+          >
+            L’IA pensée pour les TPE et PME, <span className="editorial-title text-blue">au service de votre croissance.</span>
+          </motion.h1>
+           
+          <motion.div 
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ delay: 0.4 }}
+             className="flex flex-col items-center gap-6"
+          >
+            <p className="text-[20px] font-light text-text-secondary leading-[1.6] max-w-2xl">
+              Nous aidons les TPE et PME à intégrer les outils d'IA dans leur quotidien professionnel, à travers des formations, audit et construction d’outils sur-mesure.
+            </p>
+            
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-6">
+                <Button 
+                  variant="primary" 
+                  href="https://calendly.com/whondydrouode/30min"
+                  className="px-12 py-6 text-[16px]"
+                >
+                  Diagnostic gratuit
+                </Button>
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-1.5 px-4">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle size={12} className="text-blue" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">Financements OPCO & Agefice</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle size={12} className="text-blue" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">70+ TPE & PME accompagnées</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle size={12} className="text-blue" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">Certificat Qualiopi</span>
+                  </div>
+                </div>
+              </div>
 
-        {/* Qualiopi */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 flex justify-center"
-        >
-          <img 
-            src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
-            alt="Qualiopi" 
-            className="h-24 md:h-32 w-auto object-contain bg-white/50 backdrop-blur-sm p-4 rounded-xl shadow-sm border border-white/20"
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
+              <div className="max-w-[140px] hover:opacity-100 transition-opacity mt-2">
+                <a 
+                  href="https://drive.google.com/file/d/1AbYNyA39ifObir4XwD66UXTkzK_4SUHZ/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img 
+                    src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
+                    alt="Certification Qualiopi" 
+                    className="w-full h-auto"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 }
+

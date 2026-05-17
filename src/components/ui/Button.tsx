@@ -9,12 +9,12 @@ interface ButtonProps {
 }
 
 export const Button = ({ variant, children, href, onClick, className = "" }: ButtonProps) => {
-  const baseClasses = "px-5 py-3 rounded-md font-medium text-base transition-all duration-fast inline-flex items-center justify-center gap-2";
+  const baseClasses = "px-10 py-3 rounded-none font-semibold text-[14px] uppercase tracking-widest transition-all duration-500 inline-flex items-center justify-center gap-3 active:scale-95";
   
   const variantClasses = {
-    primary: "bg-blue text-text-on-dark hover:bg-blue-hover",
-    secondary: "bg-transparent text-text-title border border-border-strong hover:bg-bg-secondary",
-    'on-dark': "bg-white text-navy hover:bg-bg-secondary"
+    primary: "bg-text-primary text-white hover:bg-blue",
+    secondary: "bg-white text-text-primary border border-text-primary/10 hover:border-text-primary/[0.3] hover:shadow-sm",
+    'on-dark': "bg-white text-text-primary hover:bg-bg-secondary"
   };
   
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;

@@ -18,14 +18,6 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-[70] bg-navy text-white py-2 px-6 md:px-12 flex items-center justify-between text-xs md:text-sm shrink-0">
-        <div className="flex items-center gap-6 overflow-hidden">
-          <span className="font-semibold whitespace-nowrap">🎯 Événement IA · 18 mai · CCI Versailles</span>
-          <span className="text-white/70 hidden lg:inline truncate">TPE & PME - Repartez avec les étapes pour lancer votre projet IA</span>
-        </div>
-        <a href="/event" className="text-white font-medium hover:underline whitespace-nowrap ml-4">Je réserve ma place →</a>
-      </div>
-
       <motion.div
         variants={{
           visible: { y: 0 },
@@ -33,24 +25,21 @@ export default function Header() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="fixed top-[32px] md:top-[40px] left-0 right-0 z-[60]"
+        className="fixed top-0 left-0 right-0 z-[60]"
       >
-        <header className="bg-white/90 backdrop-blur-md border-b border-border-subtle shadow-sm">
-          <div className="max-w-[1120px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <header className="glass">
+          <div className="max-w-[1200px] mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
+            <div className="flex items-center">
               <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <Wordmark />
               </a>
             </div>
             
-            <nav className="hidden lg:flex items-center gap-10">
-              <a href="/event" className="text-sm font-semibold text-blue hover:text-blue-hover transition-colors">Événement · 18 mai</a>
-              <a href="#offres" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Nos offres</a>
-              <a href="#equipe" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Notre équipe</a>
-              <a href="#etudes-de-cas" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Études de cas</a>
-              <a href="/blog" className="text-sm font-medium text-text-secondary hover:text-blue transition-colors">Blog</a>
-              <Button variant="primary" className="text-sm px-4 py-2" href="https://calendly.com/whondydrouode/30min">
-                Diagnostic gratuit
+            <nav className="hidden lg:flex items-center gap-12">
+              <a href="#offres" className="text-[13px] font-semibold text-text-secondary hover:text-text-primary transition-colors tracking-widest uppercase">Offres</a>
+              <a href="#equipe" className="text-[13px] font-semibold text-text-secondary hover:text-text-primary transition-colors tracking-widest uppercase">Équipe</a>
+              <Button variant="primary" className="text-[11px] px-6 py-2" href="https://calendly.com/whondydrouode/30min">
+                Diagnostic Gratuit
               </Button>
             </nav>
             

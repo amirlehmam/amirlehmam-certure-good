@@ -6,60 +6,89 @@ export default function FAQSection() {
 
   const faqs = [
     { 
-      q: "Par où commencer si on n'a encore rien mis en place ?", 
-      a: "Par un diagnostic Flash de 30 minutes. C'est le point de départ pour identifier les gisements de productivité immédiats sans s'engager dans un projet complexe." 
+      q: "Est-ce que l'IA est vraiment utile pour les TPE et PME ?", 
+      a: "Les chiffres parlent seuls. 3,7x de ROI en moyenne selon Microsoft, 30% du temps des dirigeants passé sur des tâches automatisables selon Bpifrance, et jusqu'à 31% de réduction des coûts opérationnels. Dans une TPE ou PME où chaque heure compte, l'IA devient un véritable levier de performance." 
     },
     { 
-      q: "Est-ce que c'est vraiment accessible pour une PME de 20 personnes ?", 
-      a: "Absolument. Nos solutions sont dimensionnées pour les PME. L'IA générative permet justement aux 'petits' d'avoir les outils des 'grands' avec des budgets maîtrisés." 
+      q: "Puis-je échanger avec vos équipes si je ne sais pas par où commencer ?", 
+      a: "Oui, et c'est même recommandé. La plupart des dirigeants qu'on accompagne ne savent pas par où commencer au départ. Nous avons sensibilisé plus de 600 personnes dans des TPE et PME. Prenez rendez-vous, on repart de zéro avec vous." 
     },
     { 
-      q: "Combien de temps avant de voir des résultats concrets ?", 
-      a: "En moyenne, les premiers indicateurs de performance s'améliorent dès la 6ème semaine après le début de l'implémentation." 
+      q: "Est-ce que l'IA va remplacer mes collaborateurs ?", 
+      a: "Non. L'IA prend en charge les tâches répétitives pour libérer vos équipes sur ce qui a vraiment de la valeur. Les entreprises qui l'ont déployé n'ont pas réduit leurs effectifs, elles ont recentré leurs collaborateurs sur des missions à plus fort impact." 
     },
     { 
-      q: "Nos données sont-elles en sécurité ?", 
-      a: "C'est notre priorité absolue. Nous mettons en place des instances privées et sécurisées. Vos données ne servent jamais à l'entraînement des modèles publics." 
+      q: "Mes données sont-elles en sécurité ?", 
+      a: "C'est la question que nous posent presque tous nos clients, en particulier ceux issus de la défense et des secteurs sensibles avec qui nous avons travaillé. La sécurité des données est non négociable. Nous avons un consultant dédié à la conformité réglementaire qui cadre chaque mission dès le départ." 
     },
     { 
-      q: "On a déjà essayé des outils IA. Pourquoi serait-ce différent ?", 
-      a: "Parce que l'outil ne résout rien seul. Nous structurons vos processus et formons vos équipes. C'est l'encadrement qui crée le ROI, pas le chatbot." 
+      q: "L'IA est-elle réservée aux entreprises technologiques ?", 
+      a: "Pas du tout. Nos clients viennent de l'industrie, de l'agroalimentaire, de la défense, des cabinets juridiques… L'IA est un outil et doit s'adapter à votre secteur, pas l'inverse." 
     },
     { 
-      q: "Peut-on commencer par une seule offre et élargir ensuite ?", 
-      a: "Oui, c'est même ce que nous recommandons. Commencez par un Audit ou une Formation pour tester l'impact réel avant de déployer à grande échelle." 
+      q: "Comment puis-je financer mon projet IA ?", 
+      a: "Plusieurs dispositifs existent. Les formations et coachings sont finançables via votre OPCO ou l'AGEFICE. Des subventions et aides complémentaires peuvent s'appliquer selon votre situation. Contactez nos experts pour être accompagné dans vos projets de formation." 
+    },
+    { 
+      q: "On n'a pas les compétences en interne pour gérer ça.", 
+      a: "C'est exactement pour ça que vous faites appel à nous. Notre rôle c'est de tout cadrer, déployer et former vos équipes pour que ça tourne sans dépendre d'un profil technique en interne." 
+    },
+    { 
+      q: "Est-ce qu'on peut commencer petit sans tout transformer d'un coup ?", 
+      a: "C'est même comme ça qu'on recommande de démarrer. On identifie les actions à fort impact et faible complexité, et on commence par là. D'expérience, les PME qui voient un ROI positif sur leur premier déploiement décident rapidement d'aller plus loin." 
     }
   ];
 
   return (
-    <section className="py-24 bg-bg-secondary/50 border-t border-border-default">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-12">
-        <div className="mb-20">
-          <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">
-             FAQ
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-text-title tracking-snug mb-6">
-             Les questions qu'on nous pose souvent.
-          </h2>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-border-default">
-              <button 
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full py-6 flex justify-between items-center text-left group"
-              >
-                <h3 className="text-lg font-semibold text-text-title pr-8 group-hover:text-blue transition-colors">{faq.q}</h3>
-                <ChevronDown className={`w-5 h-5 text-text-tertiary transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`} />
-              </button>
-              {open === i && (
-                <div className="pb-6 text-sm text-text-secondary animate-in fade-in slide-in-from-top-2 duration-300">
-                  {faq.a}
-                </div>
-              )}
+    <section className="py-20 md:py-24 bg-white border-b border-border">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
+          <div>
+            <div className="section-label mb-6 md:mb-8">FAQ</div>
+            <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-[1.1] mb-8">
+               Questions <br className="hidden md:block" />
+               <span className="editorial-title text-text-secondary">fréquentes.</span>
+            </h2>
+            
+            <div className="relative group">
+              <div className="absolute inset-0 bg-blue/5 -translate-x-4 translate-y-4 -z-10 transition-transform group-hover:-translate-x-6 group-hover:translate-y-6"></div>
+              <img 
+                src="https://i.ibb.co/p6cyDTwg/image.png" 
+                alt="Restitution d'audit d'intelligence artificielle en entreprise" 
+                className="w-full h-auto object-cover shadow-premium border border-border"
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
+              <p className="mt-8 text-[20px] font-medium text-text-secondary leading-relaxed">
+                Restitution d'un Audit IA devant les collaborateurs d'une PME industrielle
+              </p>
             </div>
-          ))}
+          </div>
+
+          <div className="lg:pt-24 pt-8">
+            <div className="divide-y divide-border">
+              {faqs.map((faq, i) => (
+                <div key={i} className="py-2 first:pt-0">
+                  <button 
+                    onClick={() => setOpen(open === i ? null : i)}
+                    className="w-full py-6 md:py-8 flex justify-between items-center text-left group"
+                  >
+                    <h3 className="text-[17px] md:text-[19px] font-medium text-text-primary pr-8 group-hover:text-blue transition-colors">
+                      {faq.q}
+                    </h3>
+                    <div className={`p-1.5 rounded-full bg-bg-secondary text-text-tertiary transition-transform duration-300 ${open === i ? 'rotate-180 text-blue' : ''}`}>
+                      <ChevronDown size={18} />
+                    </div>
+                  </button>
+                  {open === i && (
+                    <div className="pb-8 text-[15px] md:text-[16px] text-text-secondary leading-relaxed font-light">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

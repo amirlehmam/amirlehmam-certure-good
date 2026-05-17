@@ -15,56 +15,28 @@ export default function PartnersSection() {
     {
       name: "MEDEF 78",
       src: "https://medefyvelines.com/wp-content/uploads/2024/11/MEDEF_Yvelines_LOGO_RVB-1.png"
+    },
+    {
+      name: "Business France",
+      src: "https://i.ibb.co/pr0Fz0Fk/BF-Logo-2lignes-RVB.png"
     }
   ];
 
   return (
-    <section className="py-16 bg-white border-y border-border-subtle">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-32">
-        <div className="text-xs uppercase tracking-wider text-text-tertiary mb-2 text-center">
-          Partenaires institutionnels
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-navy mb-12 text-center">
-          Nous intervenons avec les acteurs qui structurent l'écosystème PME.
-        </h2>
-        
-        {/* Grid 3 colonnes avec logos GROS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-center">
+    <section className="py-8 bg-white border-b border-border">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
           {partners.map((partner, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
-            >
-              <div className="h-16 md:h-24 flex items-center justify-center transition-all">
-                <img 
-                  src={partner.src} 
-                  alt={partner.name} 
-                  className="h-full w-auto object-contain max-w-[200px]"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </motion.div>
+            <div key={i} className="flex items-center justify-center">
+              <img 
+                src={partner.src} 
+                alt={partner.name} 
+                className="h-7 md:h-10 w-auto object-contain"
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
+            </div>
           ))}
-        </div>
-
-        {/* Badges certification en dessous */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-8 border-t border-border-subtle">
-          <div className="flex items-center gap-2 bg-bg-secondary px-4 py-2 rounded-lg border border-border-default">
-            <Award className="w-5 h-5 text-blue" />
-            <span className="text-sm font-semibold text-navy">Certifié Qualiopi</span>
-          </div>
-          <div className="flex items-center gap-2 bg-bg-secondary px-4 py-2 rounded-lg border border-border-default">
-            <Shield className="w-5 h-5 text-pin" />
-            <span className="text-sm font-semibold text-navy">RGPD · Hébergement France</span>
-          </div>
-          <div className="flex items-center gap-2 bg-bg-secondary px-4 py-2 rounded-lg border border-border-default">
-            <CheckCircle className="w-5 h-5 text-terre" />
-            <span className="text-sm font-semibold text-navy">Financements OPCO</span>
-          </div>
         </div>
       </div>
     </section>

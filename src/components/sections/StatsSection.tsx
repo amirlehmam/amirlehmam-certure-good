@@ -4,118 +4,60 @@ import { motion } from "motion/react";
 
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 lg:px-32">
-        <div className="text-xs uppercase tracking-wider text-text-tertiary mb-2 text-center">
-          Résultats mesurés · Suivi 24 mois
+    <section className="pt-12 pb-24 bg-white border-b border-border">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="mb-12 text-center">
+          <div className="section-label mb-4 mx-auto w-fit">Impact de l'IA</div>
+          <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-tight max-w-4xl mx-auto">
+            Des formations et solutions IA pour réduire vos coûts, <span className="editorial-title text-text-secondary font-bold">augmenter vos revenus et optimiser votre productivité.</span>
+          </h2>
         </div>
-        <h2 className="text-3xl font-bold text-navy mb-12 text-center">
-          Ce que nos clients obtiennent en moyenne.
-        </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* CARD HERO - X3,7 prend toute la hauteur gauche */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-pin to-pin/80 rounded-3xl p-12 text-white relative overflow-hidden flex flex-col justify-center h-full"
-          >
-            {/* Pattern décoratif en arrière-plan */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-10 right-10 w-32 h-32 border-2 border-white rounded-full"></div>
-              <div className="absolute bottom-10 left-10 w-24 h-24 border-2 border-white rounded-full"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-white/30 rounded-full"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-border ring-1 ring-border shadow-premium overflow-hidden">
+          {/* Card Microsoft */}
+          <div className="bg-white p-12 flex flex-col justify-between group">
+            <div>
+              <div className="text-[48px] md:text-[64px] font-bold text-blue mb-6 tracking-tight italic leading-none">×3,7</div>
+              <p className="text-[17px] text-text-secondary leading-relaxed font-light mb-8 italic">
+                "Chaque euro investi dans l’IA génère un retour moyen de 3,7 fois la mise."
+              </p>
             </div>
-            
-            <div className="relative z-10">
-              {/* Badge label */}
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
-                <Award className="w-4 h-4" />
-                <span className="text-sm font-semibold">ROI MOYEN À 12 MOIS</span>
-              </div>
-              
-              {/* Chiffre principal */}
-              <div className="text-8xl font-heavy mb-6 leading-none">×3,7</div>
-              
-              {/* Description */}
-              <p className="text-lg leading-relaxed mb-6 text-white/90">
-                Pour 1 € investi dans un projet IA bien cadré, nos clients génèrent en moyenne 3,70 € de valeur mesurable.
-              </p>
-              
-              {/* Source */}
-              <div className="text-sm text-white/70 italic">
-                Source : Suivi interne Certure · 50+ entreprises · 24 mois
-              </div>
+            <div className="pt-8 border-t border-border flex items-center justify-between">
+              <a href="https://blogs.microsoft.com/blog/2024/11/12/idcs-2024-ai-opportunity-study-top-five-ai-trends-to-watch/" target="_blank" className="text-[10px] font-bold uppercase tracking-widest text-blue hover:underline">Source : Microsoft</a>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" className="h-5 md:h-6 opacity-80" alt="Logo Microsoft - Source impact IA" loading="lazy" />
             </div>
-          </motion.div>
-
-          {/* STACK DROITE - 2 cards empilées */}
-          <div className="flex flex-col gap-8">
-            {/* Card 4-6h */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-bg-secondary rounded-2xl p-8 border border-border-default hover:shadow-lg hover:border-blue/30 transition-all group"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                {/* Icône */}
-                <div className="w-12 h-12 bg-blue/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue/20 transition-colors">
-                  <Clock className="w-6 h-6 text-blue" />
-                </div>
-                {/* Chiffre + label */}
-                <div>
-                  <div className="text-5xl font-heavy text-navy leading-none mb-1">4–6 h</div>
-                  <div className="text-xs font-bold text-blue uppercase tracking-wide">PAR SEMAINE</div>
-                </div>
-              </div>
-              
-              {/* Description */}
-              <p className="text-sm text-text-secondary leading-relaxed mb-3">
-                Temps récupéré par collaborateur sur les tâches à faible valeur ajoutée.
+          </div>
+ 
+          {/* Card Bpifrance */}
+          <div className="bg-white p-12 flex flex-col justify-between group">
+            <div>
+              <div className="text-[48px] md:text-[64px] font-bold text-text-primary mb-6 tracking-tight leading-none">30%</div>
+              <p className="text-[17px] text-text-secondary leading-relaxed font-light mb-8 italic">
+                "Les dirigeants de PME consacrent en moyenne 30 % de leur semaine à des tâches administratives répétitives."
               </p>
-              
-              {/* Source */}
-              <div className="text-xs text-text-tertiary italic">
-                Source : Mesures post-déploiement Certure 2024-2025
-              </div>
-            </motion.div>
-
-            {/* Card 6 mois */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-bg-secondary rounded-2xl p-8 border border-border-default hover:shadow-lg hover:border-[#F59E0B]/30 transition-all group"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                {/* Icône */}
-                <div className="w-12 h-12 bg-[#F59E0B]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#F59E0B]/20 transition-colors">
-                  <Zap className="w-6 h-6 text-[#F59E0B]" />
-                </div>
-                {/* Chiffre + label */}
-                <div>
-                  <div className="text-5xl font-heavy text-navy leading-none mb-1">6 mois</div>
-                  <div className="text-xs font-bold text-[#F59E0B] uppercase tracking-wide">RENTABILITÉ</div>
-                </div>
-              </div>
-              
-              {/* Description */}
-              <p className="text-sm text-text-secondary leading-relaxed mb-3">
-                De l'audit aux premiers gains mesurables. Pas de tunnel de 18 mois.
+            </div>
+            <div className="pt-8 border-t border-border flex items-center justify-between">
+              <a href="https://drive.google.com/file/d/1iWqPtc2OObzAxJ6jBghtQ9ya277VbQnt/view?usp=sharing" target="_blank" className="text-[10px] font-bold uppercase tracking-widest text-blue hover:underline">Source : Bpifrance Le Lab</a>
+              <img src="https://i.ibb.co/jqxsx3R/Logo-Bpifrance-2.jpg" className="h-6 opacity-80" alt="Logo Bpifrance - Source impact IA" loading="lazy" />
+            </div>
+          </div>
+ 
+          {/* Card Capgemini */}
+          <div className="bg-white p-12 flex flex-col justify-between group">
+            <div>
+              <div className="text-[48px] md:text-[64px] font-bold text-text-primary mb-6 tracking-tight leading-none">26-31%</div>
+              <p className="text-[17px] text-text-secondary leading-relaxed font-light mb-8 italic">
+                "Réduction des coûts sur la finance, les achats, les RH et le service client grâce à l'IA générative."
               </p>
-              
-              {/* Source */}
-              <div className="text-xs text-text-tertiary italic">
-                Source : Méthodologie Certure · Suivi clients 2024-2025
-              </div>
-            </motion.div>
+            </div>
+            <div className="pt-8 border-t border-border flex items-center justify-between">
+              <a href="https://www.capgemini.com/in-en/insights/research-library/ai-and-gen-ai-in-business-operations/" target="_blank" className="text-[10px] font-bold uppercase tracking-widest text-blue hover:underline">Source : Capgemini</a>
+              <img src="https://i.ibb.co/dJmNp21d/image.png" className="h-3 opacity-70" alt="Logo Capgemini - Source impact IA" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

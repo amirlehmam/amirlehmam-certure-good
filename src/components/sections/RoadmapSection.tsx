@@ -48,44 +48,45 @@ export default function RoadmapSection() {
   const activeStep = Math.floor((progress / 100) * steps.length);
 
   return (
-    <section ref={ref} className="py-24 border-t border-border-default">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-12">
+    <section ref={ref} className="py-24 bg-white border-b border-border overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
         <div className="mb-20">
-          <div className="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3">
-             LE DÉROULÉ
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-text-title tracking-snug mb-6">
+          <div className="section-label mb-4">Le déroulé</div>
+          <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-[1.1] max-w-3xl">
             De l'audit au ROI mesuré, étape par étape.
           </h2>
-          <p className="text-md text-text-secondary leading-relaxed max-w-[700px]">
-            Pas de tunnel de 18 mois. Vos premiers gains visibles dès la 6ᵉ semaine grâce à notre méthodologie structurée.
-          </p>
         </div>
 
-        <div className="flex items-start justify-between relative pt-8 pb-12 overflow-x-auto no-scrollbar md:overflow-visible">
+        <div className="relative pt-12">
           {/* Ligne de connexion grise */}
-          <div className="absolute top-12 left-0 right-0 h-0.5 bg-border-default md:block hidden"></div>
+          <div className="absolute top-[60px] left-8 right-8 h-[2px] bg-bg-secondary hidden md:block"></div>
           
           {/* Ligne progressive */}
           <div 
-            className="absolute top-12 left-0 h-0.5 bg-blue transition-all duration-300 md:block hidden" 
-            style={{ width: `${progress}%` }}
+            className="absolute top-[60px] left-8 h-[2px] bg-blue transition-all duration-700 hidden md:block" 
+            style={{ width: `calc(${progress}% - 64px)` }}
           ></div>
           
-          {steps.map((step, i) => {
-            const stepActive = i <= activeStep || (i === 0 && progress > 0);
-            return (
-              <div key={i} className={`relative z-10 flex-1 min-w-[200px] text-center transition-all duration-500 ${stepActive ? 'opacity-100' : 'opacity-30'}`}>
-                <div className={`w-10 h-10 mx-auto mb-6 rounded-full flex items-center justify-center transition-all duration-500 border-4 border-white shadow-sm ${
-                  stepActive ? (i === 3 ? 'bg-pin' : 'bg-blue') : 'bg-border-default'
-                } ${stepActive ? 'scale-110' : 'scale-90'}`}>
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            {steps.map((step, i) => {
+              const stepActive = i <= activeStep || (i === 0 && progress > 5);
+              return (
+                <div key={i} className={`flex flex-col transition-all duration-700 ${stepActive ? 'opacity-100 translate-y-0' : 'opacity-20 translate-y-4'}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 mb-8 border-[4px] border-white shadow-apple ${
+                    stepActive ? 'bg-blue scale-110' : 'bg-bg-secondary scale-100'
+                  }`}>
+                    {stepActive && <div className="w-2.5 h-2.5 bg-white rounded-full animate-pulse" />}
+                  </div>
+                  <div className={`text-[12px] font-bold mb-3 uppercase tracking-widest transition-colors ${stepActive ? 'text-blue' : 'text-text-tertiary'}`}>
+                    {step.period}
+                  </div>
+                  <h3 className={`text-[18px] font-bold leading-tight transition-colors ${stepActive ? 'text-text-primary' : 'text-text-secondary'}`}>
+                    {step.title}
+                  </h3>
                 </div>
-                <div className={`text-sm font-bold mb-2 uppercase tracking-wide transition-colors ${stepActive ? 'text-navy' : 'text-text-tertiary'}`}>{step.period}</div>
-                <p className={`text-sm font-medium max-w-[160px] mx-auto leading-snug transition-colors ${stepActive ? 'text-text-title' : 'text-text-secondary'}`}>{step.title}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

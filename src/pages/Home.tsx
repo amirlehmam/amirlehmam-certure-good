@@ -12,7 +12,6 @@ import CaseStudiesSection from "../components/sections/CaseStudiesSection";
 import RoadmapSection from "../components/sections/RoadmapSection";
 import OffersSection from "../components/sections/OffersSection";
 import TeamSection from "../components/sections/TeamSection";
-import EventSection from "../components/sections/EventSection";
 import FAQSection from "../components/sections/FAQSection";
 import CTAFinalSection from "../components/sections/CTAFinalSection";
 
@@ -28,13 +27,9 @@ export default function Home() {
         <EventGallerySection />
         <StatsSection />
         <MethodologySection />
-        <DiagnosticSection />
-        <TimelineSection />
         <CaseStudiesSection />
-        <RoadmapSection />
         <OffersSection />
         <TeamSection />
-        <EventSection />
         <FAQSection />
         <CTAFinalSection />
       </main>

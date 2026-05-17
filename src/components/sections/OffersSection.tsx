@@ -1,123 +1,132 @@
 import React from "react";
-import { Clock } from "lucide-react";
+import { Clock, Search, GraduationCap, Users, Code, MapPin, MessageCircleMore } from "lucide-react";
 import { Button } from "../ui/Button";
+import { motion } from "motion/react";
 
 export default function OffersSection() {
   const offers = [
     {
       title: "Audit IA",
-      price: "à partir de 6 000 €",
-      desc: "En 10 jours, vous savez exactement où l'IA crée de la valeur — et par où commencer. Cartographie, cas d'usage ROI, feuille de route 12 mois.",
-      details: "10 jours · sur site + distanciel",
-      tag: "Point d'entrée recommandé",
-      variant: "soft" as const
+      price: "À partir de 6 000€",
+      desc: "On audite vos équipes et vos process pour identifier où l'IA crée de la valeur. Vous repartez avec une feuille de route avec des projets à ROI positifs à déployer tout de suite et les chantiers qui transformeront votre entreprise.",
+      details: [
+        { text: "10 jours", icon: <Clock className="w-4 h-4" /> }
+      ]
     },
     {
-      title: "Formation équipes",
+      title: "Formation sur-mesure",
       price: "3 500 €",
-      desc: "Une journée dans vos locaux. Vos collaborateurs repartent avec des agents IA opérationnels, une bibliothèque de prompts métier et une charte d'usage.",
-      details: "1 jour · max 15 pers. · sur mesure"
+      desc: "Nous formons vos collaborateurs pour qu’ils arrêtent de perdre du temps sur leurs tâches répétitives, utilisent l'IA en toute sécurité et travaillent plus efficacement au quotidien.",
+      details: [
+        { text: "1 jour", icon: <Clock className="w-4 h-4" /> },
+        { text: "Jusqu'à 15 collaborateurs", icon: <Users className="w-4 h-4" /> },
+        { text: "Dans vos locaux", icon: <MapPin className="w-4 h-4" /> }
+      ]
     },
     {
       title: "Coaching dirigeant",
       price: "4 500 €",
-      desc: "5 sessions 1-to-1 de 1h30 pour structurer votre stratégie IA, arbitrer vos décisions et ne plus être seul face aux choix technologiques.",
-      details: "5 × 1h30 · présentiel ou distanciel"
+      desc: "Coaching individuel pour maîtriser l’IA et ses outils, identifier les opportunités pour votre TPE/ PME et encadrer les usages pour limiter les risques",
+      details: [
+        { text: "5 sessions 1 to 1 de 1h30", icon: <Clock className="w-4 h-4" /> },
+        { text: "Présentiel ou distanciel", icon: <MapPin className="w-4 h-4" /> },
+        { text: "Suivi individuel sur Whatsapp", icon: <MessageCircleMore className="w-4 h-4" /> }
+      ]
     },
     {
-      title: "Développement IA",
-      price: "sur devis",
-      desc: "Nous construisons vos agents IA métier sur mesure, connectés à vos outils existants (CRM, ERP, suite bureautique) — prêts à l'emploi.",
-      details: "intégration complète · suivi inclus"
+      title: "Déploiement",
+      price: "SUR DEVIS",
+      desc: "Nous développons la solution adaptée à votre PME, à vos données et à vos process, pour transformer un projet IA en avantage concurrentiel.",
+      details: [],
+      icon: <Code className="w-5 h-5" />
     }
   ];
 
   return (
-    <section id="offres" className="py-24 bg-[#212E55]">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-12">
-        <div className="mb-20">
-          <div className="text-xs font-bold uppercase tracking-widest text-white/60 mb-3">
-             NOS OFFRES
+    <section id="offres" className="py-20 md:py-32 bg-bg-secondary border-b border-border">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12 md:mb-24">
+          <div className="max-w-3xl">
+            <div className="section-label mb-6">NOS OFFRES</div>
+            <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-[1.1] mb-8">
+              Des services co-construits <br className="hidden md:block" />
+              avec des TPE et PME, <span className="editorial-title text-text-secondary">parce que personne ne connaît mieux leur réalité qu'eux.</span>
+            </h2>
+            <p className="text-[18px] text-text-secondary font-light max-w-2xl leading-relaxed">
+              Quelle que soit votre maturité en IA, vos objectifs et vos préoccupations, nous proposons des services adaptés à vos besoins.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-snug mb-6">
-             Quatre offres pour transformer votre entreprise.
-          </h2>
-          <p className="text-md text-white/80 leading-relaxed max-w-[800px]">
-             On ne vend pas des outils. On génère du ROI avec l'IA — de l'audit jusqu'au déploiement complet.
-          </p>
+          <div className="md:pt-12">
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {offers.map((offer, i) => (
-            <div 
-              key={i} 
-              className={`relative rounded-2xl p-8 md:p-10 transition-all duration-300 group flex flex-col ${
-                offer.title === "Audit IA" 
-                ? 'bg-white/5 border-2 border-[#F59E0B] shadow-lg hover:shadow-xl' 
-                : 'bg-white border border-border-default hover:border-blue/50'
-              }`}
+            <motion.div 
+              key={i}
+              className="bg-white p-8 md:p-12 hover:bg-bg-secondary transition-colors duration-500 flex flex-col group h-full shadow-premium border border-border"
             >
-              {offer.title === "Audit IA" && (
-                <div className="absolute -top-4 left-8 bg-[#F59E0B] text-white px-4 py-1.5 rounded-full text-[10px] font-heavy tracking-widest uppercase shadow-md">
-                  ⭐ POINT D'ENTRÉE RECOMMANDÉ
-                </div>
-              )}
-              
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <h3 className={`text-3xl font-heavy mb-1 ${offer.title === "Audit IA" ? 'text-white' : 'text-navy'}`}>
-                    {offer.title}
-                  </h3>
-                  <p className={`text-sm font-medium ${offer.title === "Audit IA" ? 'text-white/70' : 'text-text-tertiary'}`}>
-                    {offer.title === "Audit IA" ? "Le diagnostic complet" : (offer.title === "Formation équipes" ? "Acculturation & outils" : (offer.title === "Coaching dirigeant" ? "Accompagnement stratégique" : "Solutions sur mesure"))}
-                  </p>
-                </div>
-                <div className="text-right">
-                  {offer.title === "Audit IA" && (
-                    <div className="text-[10px] text-white/70 font-bold uppercase tracking-widest mb-1">à partir de</div>
-                  )}
-                  <div className={`text-3xl font-heavy tabular-nums ${offer.title === "Audit IA" ? 'text-white' : 'text-navy'}`}>
-                    {offer.title === "Audit IA" ? "6 000 €" : offer.price}
-                  </div>
-                </div>
+              <div className="mb-6 md:mb-8">
+                 <h3 className="text-[28px] md:text-[32px] font-bold text-text-primary leading-tight mb-2">{offer.title}</h3>
+                 <div className="text-[16px] md:text-[18px] text-blue font-bold uppercase tracking-[0.2em]">{offer.price}</div>
               </div>
 
-              <p className={`text-sm mb-8 leading-relaxed flex-1 ${offer.title === "Audit IA" ? 'text-white/90' : 'text-text-secondary'}`}>
+              <p className="body-text text-[15px] md:text-[16px] leading-[1.8] font-light mb-8 md:mb-10 flex-1">
                 {offer.desc}
               </p>
-              
-              <div className={`flex items-center gap-2 text-xs mb-8 font-medium ${offer.title === "Audit IA" ? 'text-white/60' : 'text-text-tertiary'}`}>
-                <Clock className="w-4 h-4 opacity-50" />
-                <span>{offer.details}</span>
-              </div>
 
-              <Button 
-                variant={offer.title === "Audit IA" ? "primary" : "secondary"} 
-                href="https://calendly.com/whondydrouode/30min"
-                className={`w-full text-sm font-bold uppercase tracking-widest py-4 ${
-                  offer.title === "Audit IA" ? '!bg-[#F59E0B] !text-white border-none hover:!bg-[#D97706]' : '!bg-[#212E55] !text-white border-none hover:!bg-[#2d3e75]'
-                }`}
-              >
-                {offer.price === "sur devis" ? "Demander un devis" : "En savoir plus"} →
-              </Button>
-            </div>
+              {offer.details && offer.details.length > 0 && (
+                <div className="flex flex-col gap-3 text-[12px] text-text-secondary font-semibold uppercase tracking-widest mb-8 md:mb-10 group-hover:text-blue transition-colors">
+                  {offer.details.map((detail, j) => (
+                    <div key={j} className="flex items-center gap-4">
+                      <div className="opacity-50 group-hover:opacity-100 transition-opacity">
+                        {typeof detail === 'string' ? offer.icon : detail.icon}
+                      </div>
+                      <span>{typeof detail === 'string' ? detail : detail.text}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {offer.title === "Déploiement" && (
+                 <div className="flex flex-col gap-3 text-[12px] text-text-secondary font-semibold uppercase tracking-widest mb-10 group-hover:text-blue transition-colors">
+                    <div className="flex items-center gap-4">
+                       <div className="opacity-50 group-hover:opacity-100 transition-opacity"><Code className="w-4 h-4" /></div>
+                       <span>Sur-mesure</span>
+                    </div>
+                 </div>
+              )}
+
+              <div className="pt-8 border-t border-border mt-auto">
+                <Button 
+                  variant="secondary" 
+                  className="w-full text-[11px] py-4" 
+                  href="https://calendly.com/whondydrouode/30min"
+                >
+                  EN SAVOIR PLUS
+                </Button>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="bg-bg-tertiary rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-border-default shadow-sm text-center md:text-left">
-          <p className="text-sm md:text-base text-text-secondary leading-relaxed">
-             <span className="font-bold text-text-title uppercase tracking-widest text-xs inline-block mb-2 md:mb-0 md:mr-3">Certification Qualiopi</span>
-             Vos formations sont finançables via votre OPCO. Réduisez votre investissement dès le premier euro.
-          </p>
+        <div className="mt-12 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 bg-bg-secondary border border-border shadow-premium">
+          <div className="flex-1">
+            <div className="section-label mb-2 text-[10px]">Certification Qualiopi</div>
+            <p className="text-[18px] text-text-secondary leading-relaxed font-light">
+              Vos formations et coaching sont finançables via votre OPCO ou l’Agefice. Échangez avec nos experts pour vous accompagner dans votre projet de formation.
+            </p>
+          </div>
           <Button 
             variant="secondary" 
-            href="https://quel-est-mon-opco.francecompetences.fr/"
-            className="whitespace-nowrap bg-white text-xs font-heavy tracking-widest uppercase px-8"
+            href="https://calendly.com/whondydrouode/30min"
+            className="px-8 text-[11px]"
           >
-            Vérifier mon éligibilité →
+            Échangez avec un conseiller
           </Button>
         </div>
       </div>
     </section>
   );
 }
+

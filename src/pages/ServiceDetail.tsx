@@ -396,13 +396,6 @@ const ServiceDetail = () => {
               <p className="text-xl text-gray-500 font-medium">L'IA n'est plus une option, c'est votre futur standard opérationnel.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Link 
-                to="/evenement"
-                className="inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-10 py-5 rounded-full text-lg font-black transition-all shadow-xl"
-              >
-                Conférence 18 mai
-                <Calendar className="w-5 h-5" />
-              </Link>
               <button 
                 onClick={() => navigate('/services')}
                 className="inline-flex items-center gap-3 bg-white border-2 border-gray-100 hover:border-blue-600 text-gray-900 px-10 py-5 rounded-full text-lg font-black transition-all"

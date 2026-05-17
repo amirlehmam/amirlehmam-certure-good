@@ -5,16 +5,16 @@ interface WordmarkProps {
   className?: string;
 }
 
-export const Wordmark = ({ variant = 'black', className = "" }: WordmarkProps) => {
-  const colorMap = {
-    black: 'text-black',
-    navy: 'text-navy',
-    white: 'text-white'
-  };
-  
+export const Wordmark = ({ className = "" }: WordmarkProps) => {
   return (
-    <div className={`text-2xl md:text-3xl font-heavy tracking-tighter ${colorMap[variant]} ${className}`}>
-      CERTURE<span className="text-blue">.</span>
+    <div className={`relative ${className}`}>
+      <img 
+        src="https://i.ibb.co/pj4Yk0dS/LOGO-CERTURE.png" 
+        alt="CERTURE" 
+        className="h-14 md:h-16 w-auto object-contain"
+        referrerPolicy="no-referrer"
+        loading="eager"
+      />
     </div>
   );
 };

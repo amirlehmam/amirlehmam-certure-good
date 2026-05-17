@@ -29,11 +29,9 @@ export default function VideoTestimonialsSection() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-32">
-        <div className="text-xs uppercase tracking-wider text-text-tertiary mb-2 text-center">
-          Ils témoignent
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-navy mb-12 text-center tracking-tight">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12">
+        <div className="section-label mb-4 mx-auto w-fit">Ils témoignent</div>
+        <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary mb-12 text-center tracking-tight leading-[1.1]">
           La parole aux dirigeants qui sont passés à l'acte.
         </h2>
 
@@ -50,8 +48,9 @@ export default function VideoTestimonialsSection() {
               <div className="aspect-video bg-navy relative overflow-hidden cursor-pointer">
                 <img 
                   src={t.image} 
-                  alt={t.role}
+                  alt={`Témoignage dirigeant : ${t.role}`}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">

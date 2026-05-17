@@ -3,33 +3,30 @@ import { Button } from "../ui/Button";
 
 export default function CTAFinalSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-12">
-        <div className="bg-bg-tertiary rounded-[2rem] p-12 md:p-24 text-center border border-border-default relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-heavy text-text-title tracking-tight leading-tight mb-8">
-               Votre PME laisse-t-elle de l'argent sur la table ?
+    <section className="py-24 bg-bg-secondary">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-12 text-center">
+        <div className="bg-white rounded-[24px] p-8 md:p-24 border border-border shadow-apple relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <div className="section-label mb-6">Prêt à commencer ?</div>
+            <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-tight mb-8">
+               Que vous soyez perdu avec l’IA ou prêt à commencer, nous sommes là pour vous
             </h2>
-            <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-[700px] mx-auto mb-12">
-               En 30 minutes, nos experts identifient les 3 leviers IA les plus rentables pour votre activité. Sans engagement. Sans jargon. Juste des résultats concrets.
+            <p className="text-[18px] md:text-[20px] text-text-secondary leading-relaxed mb-12 font-light">
+               En 30 minutes, nos experts vous accompagnent pour définir un plan de transformation de votre TPE ou PME.
             </p>
-            <div className="flex flex-col items-center gap-8">
-              <Button variant="primary" className="text-lg px-8 py-4" href="https://calendly.com/whondydrouode/30min">
-                Prendre rendez-vous gratuitement →
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="primary" className="px-10 py-4 text-base" href="https://calendly.com/whondydrouode/30min">
+                Réserver mon diagnostic
               </Button>
-              <div className="text-[11px] uppercase tracking-widest text-text-tertiary font-bold flex flex-wrap justify-center gap-x-8 gap-y-4">
-                 <span>Certifié Qualiopi</span>
-                 <span>Formations éligibles OPCO</span>
-                 <span>50+ PME accompagnées</span>
-                 <span>97 % de satisfaction</span>
-              </div>
+              <Button variant="secondary" className="px-10 py-4 text-base" href="#offres">
+                Voir toutes les offres
+              </Button>
+            </div>
+            
             </div>
           </div>
-          
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue/5 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue/5 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
+
