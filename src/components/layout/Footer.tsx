@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Wordmark } from "../ui/Wordmark";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
@@ -19,8 +20,10 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-[11px] font-bold text-text-primary uppercase tracking-widest">Navigation</h4>
             <ul className="space-y-3">
-              <li><a href="#offres" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-light">Nos Offres</a></li>
-              <li><a href="#equipe" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-light">L'Équipe</a></li>
+              <li><Link to="/" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-light">Accueil</Link></li>
+              <li><a href="/#offres" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-light">Nos Offres</a></li>
+              <li><Link to="/formations" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-light">Nos Formations</Link></li>
+              <li><a href="/#equipe" className="text-[14px] text-text-secondary hover:text-text-primary transition-colors font-light">L'Équipe</a></li>
             </ul>
           </div>
           

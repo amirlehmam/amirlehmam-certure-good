@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Wordmark } from "../ui/Wordmark";
 import { Button } from "../ui/Button";
@@ -30,14 +31,14 @@ export default function Header() {
         <header className="glass">
           <div className="max-w-[1200px] mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
             <div className="flex items-center">
-              <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <Wordmark />
-              </a>
+              </Link>
             </div>
             
             <nav className="hidden lg:flex items-center gap-12">
-              <a href="#offres" className="text-[13px] font-semibold text-text-secondary hover:text-text-primary transition-colors tracking-widest uppercase">Offres</a>
-              <a href="#equipe" className="text-[13px] font-semibold text-text-secondary hover:text-text-primary transition-colors tracking-widest uppercase">Équipe</a>
+              <a href="/#offres" className="text-[13px] font-semibold text-text-secondary hover:text-text-primary transition-colors tracking-widest uppercase">Offres</a>
+              <a href="/#equipe" className="text-[13px] font-semibold text-text-secondary hover:text-text-primary transition-colors tracking-widest uppercase">Équipe</a>
               <Button variant="primary" className="text-[11px] px-6 py-2" href="https://calendly.com/whondydrouode/30min">
                 Diagnostic Gratuit
               </Button>

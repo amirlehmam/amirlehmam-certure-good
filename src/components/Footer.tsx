@@ -45,9 +45,10 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-white font-sans">Entreprise</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><a href="#" className="hover:text-[#2D5CF3] transition-colors font-sans">Notre équipe</a></li>
+              <li><Link to="/" className="hover:text-[#2D5CF3] transition-colors font-sans">Accueil</Link></li>
+              <li><Link to="/formations" className="hover:text-[#2D5CF3] transition-colors font-sans">Nos Formations</Link></li>
+              <li><a href="/#equipe" className="hover:text-[#2D5CF3] transition-colors font-sans">Notre équipe</a></li>
               <li><Link to="/evenement" className="hover:text-[#2D5CF3] transition-colors font-sans">Evènement</Link></li>
-              <li><a href="#" className="hover:text-[#2D5CF3] transition-colors font-sans">Contact</a></li>
             </ul>
           </div>
           <div className="space-y-6 hidden sm:block">
