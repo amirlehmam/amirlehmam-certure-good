@@ -71,7 +71,7 @@ export default function HeroSection() {
                     alt="Certification Qualiopi" 
                     className="w-full h-auto"
                     referrerPolicy="no-referrer"
-                    loading="lazy"
+                    loading="eager"
                   />
                 </a>
               </div>

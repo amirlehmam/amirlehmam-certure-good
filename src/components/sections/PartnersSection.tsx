@@ -33,7 +33,7 @@ export default function PartnersSection() {
                 alt={partner.name} 
                 className="h-7 md:h-10 w-auto object-contain"
                 referrerPolicy="no-referrer"
-                loading="lazy"
+                loading="eager"
               />
             </div>
           ))}
