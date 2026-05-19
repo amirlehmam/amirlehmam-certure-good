@@ -18,7 +18,7 @@ export default function EventGallerySection() {
       stats: "Journée de Masterclass",
       icon: <GraduationCap className="w-4 h-4" />,
       tag: "PME & IA Event",
-      image: "https://i.ibb.co/j9QyFyVQ/L-IA-au-service-des-PME.png"
+      image: "https://i.ibb.co/Kz8npB0H/Capture-d-e-cran-2026-05-19-a-11-13-24.png"
     },
     {
       title: "Formation de 21 conseillers Business France accompagnant les TPE et PME dans leur développement à l’international",
