@@ -8,29 +8,24 @@ export default function MethodologySection() {
 
   const pillars = [
     {
-      title: "Cadrer",
+      title: "Cadrage",
       icon: <Target className="w-5 h-5" />,
       description: "Nous démarrons par des échanges avec vous pour comprendre votre maturité IA, vos enjeux, vos freins et les problématiques métiers de votre industrie."
     },
     {
-      title: "Cartographier",
+      title: "Proposition",
       icon: <Map className="w-5 h-5" />,
-      description: "On audite vos équipes et vos process pour identifier où l'IA crée de la valeur. Vous repartez avec une feuille de route avec des projets à ROI positifs à déployer tout de suite et les chantiers qui transformeront votre entreprise."
+      description: "On imagine ensemble les outils IA qui répondent à vos problématiques, avec le coût et leur gain pour votre activité. On affine jusqu'à trouver l’outil que vous aimerez utiliser au quotidien."
     },
     {
-      title: "Décider",
-      icon: <BookOpen className="w-5 h-5" />,
-      description: "Nous formons vos dirigeants pour maîtriser l’IA et ses outils, identifier les opportunités pour votre TPE/ PME et encadrer les usages pour limiter les risques."
-    },
-    {
-      title: "Accompagner",
-      icon: <Users className="w-5 h-5" />,
-      description: "Nous formons vos collaborateurs pour qu’ils arrêtent de perdre du temps sur leurs tâches répétitives, utilisent l'IA en toute sécurité et travaillent plus efficacement au quotidien."
-    },
-    {
-      title: "Déployer",
+      title: "Développement",
       icon: <Code className="w-5 h-5" />,
-      description: "Nous développons la solution adaptée à votre PME, à vos données et à vos process, pour transformer un projet IA en avantage concurrentiel."
+      description: "Nous donnons vie à l’outil IA que nous avons imaginé ensemble, adaptée à votre PME, à vos données et à vos process et prêt à être utilisé quotidiennement et à accélérer votre activité."
+    },
+    {
+      title: "Suivi",
+      icon: <Users className="w-5 h-5" />,
+      description: "Pour que vous gardiez l'esprit tranquille et restiez concentré sur votre métier, on s'occupe de la maintenance, du suivi de votre outil et de l'accompagnement à sa prise en main."
     }
   ];
 
@@ -53,7 +48,6 @@ export default function MethodologySection() {
                 src="https://i.ibb.co/zHrLTQzH/Design-sans-titre-2026-05-17-T231556-666.png" 
                 alt="Audit IA Terrain dans une PME française" 
                 className="w-full aspect-[4/5] md:h-[600px] object-cover shadow-premium"
-                referrerPolicy="no-referrer"
                 loading="lazy"
               />
             </div>
@@ -106,7 +100,7 @@ export default function MethodologySection() {
               Vous ne savez pas par où commencer ?
             </h3>
             <p className="text-[18px] text-text-secondary font-light">
-              Nous sommes là pour vous aider à y voir clair et définir vos premières priorités.
+              Nous sommes là pour vous aider à y voir clair et définir comment l'IA peut vous être utile.
             </p>
           </div>
           <div className="flex flex-col gap-4 min-w-[300px]">

@@ -78,71 +78,19 @@ const Services = () => {
   const offers = [
     {
       number: "01",
-      id: "service-2",
-      slug: "audit-ia",
-      title: "Audit IA",
-      subtitle: "Diagnostic & Plan d'actions",
-      description: "Nous identifions les cas d'usage IA qui auront un impact réel : temps gagné, coûts réduits, productivité augmentée. Vous repartez avec un plan d'actions clair.",
-      points: [
-        "Analyse des processus métiers",
-        "Identification des cas d'usage prioritaires",
-        "Roadmap de transformation IA",
-        "Quick wins immédiats"
-      ],
-      price: "Dès 6 000 EUR",
-      footer: "Financement Bpifrance possible (42%)",
-      dark: true
-    },
-    {
-      number: "02",
-      id: "service-1",
-      slug: "formation-ia",
-      title: "Formation IA",
-      subtitle: "Acculturation & Montée en compétences",
-      description: "Comprendre et maîtriser l'IA générative pour l'utiliser à son plein potentiel. Nous formons vos collaborateurs avec des cas d'usage tirés de leur quotidien professionnel.",
-      points: [
-        "Prompt Engineering avancé",
-        "Ateliers pratiques par métier",
-        "Automatisation & agents IA",
-        "Certification Certure"
-      ],
-      price: "3 500 EUR",
-      footer: "Par session / Éligible OPCO 100%",
-      dark: false
-    },
-    {
-      number: "03",
       id: "service-3",
-      slug: "prestations-sur-mesure",
-      title: "Prestations sur-mesure",
-      subtitle: "Développement & Intégration",
-      description: "Les solutions du marché ne sont pas adaptées à vos spécificités ? Nous développons des agents IA et des outils sur mesure pour vos cas d'usage métier.",
+      slug: "outils-ia",
+      title: "Outils IA",
+      subtitle: "Développement & Intégration sur-mesure",
+      description: "Nous développons la solution adaptée à votre entreprise, à vos données et à vos process, pour faire de l'IA un avantage concurrentiel.",
       points: [
-        "Agents IA conversationnels",
-        "Automatisation de workflows",
-        "Intégration à vos systèmes",
-        "Support & maintenance"
+        "Logiciels métier sur mesure",
+        "Applications mobiles et SaaS",
+        "Outils Gen AI"
       ],
       price: "Sur devis",
       footer: "Adapté à vos besoins et budget",
       dark: false
-    },
-    {
-      number: "04",
-      id: "service-4",
-      slug: "coaching-dirigeant",
-      title: "Coaching Dirigeant",
-      subtitle: "Vision Stratégique & Décision",
-      description: "Un accompagnement 1-to-1 pour transformer l'IA en levier de croissance. Développez une vision à 360° des impacts de l'IA générative sur votre organisation.",
-      points: [
-        "Fondamentaux & Vision Stratégique",
-        "Mise en pratique Dirigeant",
-        "Gouvernance & Sécurité des données",
-        "Roadmap stratégique 18 mois"
-      ],
-      price: "5 000 EUR HT",
-      footer: "5 sessions de 1h30 sur 5 mois",
-      dark: true
     }
   ];
 
@@ -153,25 +101,23 @@ const Services = () => {
         <Header variant="light" />
         <div className="mt-auto pt-32 pb-12 max-w-4xl relative z-10">
           <h1 className="text-white mb-8">
-            Quatre offres pour <br />
+            Une offre d'outils IA sur-mesure pour <br />
             <span className="text-gray-400 italic">transformer votre entreprise.</span>
           </h1>
           <p className="text-body-lg text-gray-400 max-w-2xl">
-            De l'audit stratégique à la formation de vos équipes, en passant par le développement sur-mesure : nous rendons l'IA simple, concrète et rentable.
+            Nous développons des agents IA, des intégrations de flux de travail avancés et des applications logicielles adaptées à vos données métier quotidiennes.
           </p>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-8 text-[11px] uppercase tracking-[0.2em] text-gray-500 font-medium">
-            <span>Formation</span>
+            <span>Logiciels métier sur-mesure</span>
             <div className="w-1 h-1 rounded-full bg-blue-500"></div>
-            <span>Audit</span>
+            <span>Applications mobiles et SaaS</span>
             <div className="w-1 h-1 rounded-full bg-blue-500"></div>
-            <span>Prestations sur-mesure</span>
-            <div className="w-1 h-1 rounded-full bg-blue-500"></div>
-            <span>Coaching dirigeant</span>
+            <span>Outils Gen AI</span>
           </div>
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="max-w-3xl mx-auto w-full">
         {offers.map((offer, i) => (
           <ServiceCard key={i} {...offer} />
         ))}

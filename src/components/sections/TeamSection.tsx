@@ -41,7 +41,6 @@ export default function TeamSection() {
                       src={member.image} 
                       alt={`Expert IA : ${member.name}`} 
                       className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.05]" 
-                      referrerPolicy="no-referrer" 
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-blue-soft/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>

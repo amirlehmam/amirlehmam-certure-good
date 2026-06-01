@@ -10,32 +10,32 @@ export default function FAQSection() {
       a: "Les chiffres parlent seuls. 3,7x de ROI en moyenne selon Microsoft, 30% du temps des dirigeants passé sur des tâches automatisables selon Bpifrance, et jusqu'à 31% de réduction des coûts opérationnels. Dans une TPE ou PME où chaque heure compte, l'IA devient un véritable levier de performance." 
     },
     { 
-      q: "Puis-je échanger avec vos équipes si je ne sais pas par où commencer ?", 
-      a: "Oui, et c'est même recommandé. La plupart des dirigeants qu'on accompagne ne savent pas par où commencer au départ. Nous avons sensibilisé plus de 600 personnes dans des TPE et PME. Prenez rendez-vous, on repart de zéro avec vous." 
+      q: "Comment se passe le développement d'un outil IA sur-mesure ?", 
+      a: "Nous commençons par analyser votre besoin précis et concevoir une maquette. Ensuite, nos ingénieurs développent la solution et l'intègrent directement sur vos outils existants (ERP, CRM, messageries). Enfin, nous formons vos collaborateurs pour garantir une adoption immédiate." 
     },
     { 
       q: "Est-ce que l'IA va remplacer mes collaborateurs ?", 
-      a: "Non. L'IA prend en charge les tâches répétitives pour libérer vos équipes sur ce qui a vraiment de la valeur. Les entreprises qui l'ont déployé n'ont pas réduit leurs effectifs, elles ont recentré leurs collaborateurs sur des missions à plus fort impact." 
+      a: "Non. L'IA prend en charge les tâches répétitives pour libérer vos équipes sur ce qui a vraiment de la valeur. Les entreprises qui ont déployé nos outils recentrent leurs collaborateurs sur des missions clés et à plus fort impact." 
     },
     { 
-      q: "Mes données sont-elles en sécurité ?", 
-      a: "C'est la question que nous posent presque tous nos clients, en particulier ceux issus de la défense et des secteurs sensibles avec qui nous avons travaillé. La sécurité des données est non négociable. Nous avons un consultant dédié à la conformité réglementaire qui cadre chaque mission dès le départ." 
+      q: "Mes données sont-elles sécurisées lors de l'utilisation de vos outils ?", 
+      a: "Absolument. La sécurité des données est non négociable. Nous utilisons des environnements cloisonnés et respectant les meilleures pratiques de sécurité. De plus, vos données de PME restent entièrement privées et ne sont jamais utilisées pour entraîner des modèles IA publics." 
     },
     { 
-      q: "L'IA est-elle réservée aux entreprises technologiques ?", 
-      a: "Pas du tout. Nos clients viennent de l'industrie, de l'agroalimentaire, de la défense, des cabinets juridiques… L'IA est un outil et doit s'adapter à votre secteur, pas l'inverse." 
+      q: "Combien de temps faut-il pour déployer un outil IA personnalisé ?", 
+      a: "La plupart de nos projets d'intégration et de développement d'outils personnalisés sont déployés et opérationnels en 4 à 8 semaines. Nous livrons des versions incrémentales pour vous permettre de bénéficier de gains de temps dès les premières étapes." 
     },
     { 
-      q: "Comment puis-je financer mon projet IA ?", 
-      a: "Plusieurs dispositifs existent. Les formations et coachings sont finançables via votre OPCO ou l'AGEFICE. Des subventions et aides complémentaires peuvent s'appliquer selon votre situation. Contactez nos experts pour être accompagné dans vos projets de formation." 
+      q: "Comment puis-je financer mon projet de développement IA ?", 
+      a: "Plusieurs dispositifs d'aide, subventions régionales, ou prises en charge OPCO (pour la partie accompagnement au changement / prise en main) peuvent être mobilisés. Nos experts vous guident dans l'analyse de votre éligibilité pour maximiser votre financement." 
     },
     { 
-      q: "On n'a pas les compétences en interne pour gérer ça.", 
-      a: "C'est exactement pour ça que vous faites appel à nous. Notre rôle c'est de tout cadrer, déployer et former vos équipes pour que ça tourne sans dépendre d'un profil technique en interne." 
+      q: "Qui s'occupe de la maintenance et du suivi de notre outil ?", 
+      a: "Nous prenons en charge l'hébergement, la surveillance en temps réel, l'adaptation aux évolutions des modèles d'IA, et la maintenance corrective de votre logiciel. Votre outil reste ainsi toujours performant au fil des mois." 
     },
     { 
       q: "Est-ce qu'on peut commencer petit sans tout transformer d'un coup ?", 
-      a: "C'est même comme ça qu'on recommande de démarrer. On identifie les actions à fort impact et faible complexité, et on commence par là. D'expérience, les PME qui voient un ROI positif sur leur premier déploiement décident rapidement d'aller plus loin." 
+      a: "C'est même ce que nous conseillons. Nous ciblons un premier projet d'outil simple avec un ROI mesurable en quelques semaines. Une fois que vos équipes l'ont adopté et en apprécient les bénéfices, nous pouvons passer à l'étape suivante." 
     }
   ];
 
@@ -56,11 +56,10 @@ export default function FAQSection() {
                 src="https://i.ibb.co/p6cyDTwg/image.png" 
                 alt="Restitution d'audit d'intelligence artificielle en entreprise" 
                 className="w-full h-auto object-cover shadow-premium border border-border"
-                referrerPolicy="no-referrer"
                 loading="lazy"
               />
               <p className="mt-8 text-[20px] font-medium text-text-secondary leading-relaxed">
-                Restitution d'un Audit IA devant les collaborateurs d'une PME industrielle
+                Livraison d'un outil IA devant les collaborateurs d'une PME industrielle
               </p>
             </div>
           </div>

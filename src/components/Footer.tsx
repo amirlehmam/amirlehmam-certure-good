@@ -14,7 +14,6 @@ const Footer = () => {
               src="https://i.ibb.co/d43XW9XB/Certure-logo-1200x600-1-removebg-preview.png" 
               alt="Certure Logo" 
               className="h-12 md:h-16 w-auto object-contain -ml-4"
-              referrerPolicy="no-referrer"
             />
           </Link>
           <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-sans">L'IA dans vos outils. Des résultats dès le premier mois.</p>
@@ -27,7 +26,6 @@ const Footer = () => {
                 src="https://i.ibb.co/xtsHNyjR/logo-qualiopi-avec-action-de-formation-1.png" 
                 alt="Qualiopi Processus Certifié" 
                 className="h-28 w-auto object-contain"
-                referrerPolicy="no-referrer"
               />
             </div>
           </div>
@@ -36,10 +34,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-white font-sans">Nos Offres</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><Link to="/services#service-2" className="hover:text-[#2D5CF3] transition-colors font-sans">Audit IA</Link></li>
-              <li><Link to="/services#service-4" className="hover:text-[#2D5CF3] transition-colors font-sans">Coaching Dirigeant</Link></li>
-              <li><Link to="/services#service-1" className="hover:text-[#2D5CF3] transition-colors font-sans">Formation IA</Link></li>
-              <li><Link to="/services#service-3" className="hover:text-[#2D5CF3] transition-colors font-sans">Prestations sur-mesure</Link></li>
+              <li><Link to="/services#service-3" className="hover:text-[#2D5CF3] transition-colors font-sans">Outils IA</Link></li>
             </ul>
           </div>
           <div className="space-y-6">

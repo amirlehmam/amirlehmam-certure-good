@@ -12,16 +12,16 @@ export default function CaseStudiesSection() {
       image: "https://i.ibb.co/m5TMKL0R/LUr-L1z-Q.jpg"
     },
     {
-      sector: "TPE dans les SERVICES (54) - 8 PERSONNES",
-      title: "Objectif : générer des propositions commerciales",
-      solution: "Solution : agent connecté au CRM qui produit des propositions personnalisées en 15 min au lieu de 2 h.",
-      result: "+6h par semaine économisées et amélioration du taux de transformation",
-      image: "https://i.ibb.co/27vCq8GC/HQ6EGw-A.jpg"
+      sector: "DRH externalisé (92) : 1 personne",
+      title: "Objectif : gagner du temps dans le suivi de ses dossiers RH",
+      solution: "Solution : assistant personnel connecté à votre messagerie, agenda et autres outils internes",
+      result: "+10h par semaine économisées",
+      image: "https://i.ibb.co/93Hz34JW/Capture-d-e-cran-2026-06-01-a-14-23-44.png"
     },
     {
       sector: "PME INDUSTRIE (78) · 52 PERSONNES",
       title: "Objectif : Piloter la production en temps réel",
-      solution: "Solution : Dashboard IA connecté à l'ERP. Le dirigeant anticipe les ruptures et décide sur la donnée.",
+      solution: "Solution : Dashboard IA connecté à l'ERP. Le dirigeant anticipe les ruptures et decides sur la donnée.",
       result: "35 % d'erreurs en moins",
       image: "https://i.ibb.co/Pz91q9pt/GDu-QDVT.jpg"
     }
@@ -48,7 +48,6 @@ export default function CaseStudiesSection() {
                    src={item.image} 
                    alt={item.title} 
                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
-                   referrerPolicy="no-referrer"
                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-blue/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>

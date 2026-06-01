@@ -58,7 +58,6 @@ export default function EventGallerySection() {
                   src={event.image} 
                   alt={event.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000"
-                  referrerPolicy="no-referrer"
                   loading="lazy"
                 />
               </div>

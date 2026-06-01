@@ -42,7 +42,6 @@ export default function Footer() {
               src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
               alt="Certifié Qualiopi" 
               className="h-20 w-auto object-contain"
-              referrerPolicy="no-referrer"
               loading="lazy"
             />
             <div className="hidden md:block text-left">

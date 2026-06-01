@@ -9,7 +9,7 @@ export default function StatsSection() {
         <div className="mb-12 text-center">
           <div className="section-label mb-4 mx-auto w-fit">Impact de l'IA</div>
           <h2 className="text-[32px] md:text-[52px] font-bold text-text-primary tracking-tight leading-tight max-w-4xl mx-auto">
-            Des formations et solutions IA pour réduire vos coûts, <span className="editorial-title text-text-secondary font-bold">augmenter vos revenus et optimiser votre productivité.</span>
+            Équipez vous d'outils IA pour réduire vos coûts, <span className="editorial-title text-text-secondary font-bold">augmenter vos revenus et gagner du temps.</span>
           </h2>
         </div>
 

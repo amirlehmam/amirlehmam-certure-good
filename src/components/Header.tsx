@@ -25,7 +25,6 @@ const Header = ({ variant = "dark" }: HeaderProps) => {
           src="https://i.ibb.co/d43XW9XB/Certure-logo-1200x600-1-removebg-preview.png" 
           alt="Certure Logo" 
           className="h-10 md:h-14 w-auto object-contain"
-          referrerPolicy="no-referrer"
         />
       </Link>
       <div className="hidden md:flex items-center gap-10">

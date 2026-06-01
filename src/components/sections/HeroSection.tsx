@@ -32,7 +32,7 @@ export default function HeroSection() {
              className="flex flex-col items-center gap-6"
           >
             <p className="text-[20px] font-light text-text-secondary leading-[1.6] max-w-2xl">
-              Nous aidons les TPE et PME à intégrer les outils d'IA dans leur quotidien professionnel, à travers des formations, audit et construction d’outils sur-mesure.
+              Nous construisons des outils IA sur mesure pour aider les TPE et PME à gagner du temps, améliorer leur productivité et accelerer leur activité
             </p>
             
             <div className="flex flex-col items-center gap-4">
@@ -70,7 +70,6 @@ export default function HeroSection() {
                     src="https://franchise.tempeos.com/wp-content/uploads/sites/3/2023/06/qualiopi-tempeos_logo.png" 
                     alt="Certification Qualiopi" 
                     className="w-full h-auto"
-                    referrerPolicy="no-referrer"
                     loading="eager"
                   />
                 </a>
